@@ -1,0 +1,19 @@
+{
+  "Cash":{
+    "widgets":{
+      "widget1":{
+        "name":"Available Cash"
+      },
+      "widget2":{
+        "name":"Cash Balance"
+      }
+    }
+  },
+  "Trade":{
+    "widgets":{
+      "widget3":{
+        "name":"Settlement Monitor"
+      }
+    }
+  }
+}
