@@ -7,12 +7,7 @@ function App() {
   return (
      <div className="app">
       <Header />
-
-      <main className="main">
-        <h1>Welcome to My Responsive App</h1>
-        <p>This layout is fully responsive.</p>
-      </main>
-
+      <Home />
       <Footer />
     </div>
   );
