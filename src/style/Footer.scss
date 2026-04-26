@@ -1,0 +1,98 @@
+/* ===== Footer Base ===== */
+.footer {
+  background: #0f172a;
+  color: #e2e8f0;
+  margin-top: 80px;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== Container ===== */
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+/* ===== Columns ===== */
+.footer-col h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.footer-col h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #cbd5f5;
+}
+
+.footer-col p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #cbd5e1;
+}
+
+/* ===== Links ===== */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #cbd5e1;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li:hover {
+  color: #38bdf8;
+  transform: translateX(5px);
+}
+
+/* ===== Bottom Bar ===== */
+.footer-bottom {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #1e293b;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* ===================================================== */
+/* 📱 RESPONSIVE DESIGN */
+/* ===================================================== */
+
+/* ===== Tablet (≤ 992px) ===== */
+@media (max-width: 992px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 30px;
+    padding: 50px 20px;
+  }
+}
+
+/* ===== Mobile (≤ 600px) ===== */
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr; /* 1 column */
+    text-align: center;
+  }
+
+  .footer-col {
+    margin-bottom: 20px;
+  }
+
+  .footer-col ul li {
+    transform: none;
+  }
+
+  .footer-col ul li:hover {
+    transform: none;
+  }
+}

@@ -13,13 +13,10 @@ body {
 
 /* Section Base */
 .section {
-  min-height: 120vh; /* 👈 scroll ke liye bada height */
+  min-height: 60vh; /* 👈 scroll ke liye bada height */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 120px 12%;
-
-  opacity: 0;
   transform: translateX(200px);
   transition: all 1s ease;
 }

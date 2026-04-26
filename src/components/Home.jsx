@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import "../style/Home.scss";
+import IntroSlider from "./IntroSlider";
 
 function Home() {
   useEffect(() => {
@@ -23,15 +24,7 @@ function Home() {
 
   return (
     <>
-      <div className="section left">
-        <h2>Section 1</h2>
-         <p>
-          This is a large content block. Scroll down slowly to see how this
-          section smoothly slides in from the left side of the screen.
-          The animation becomes very clear because of the increased spacing
-          and size.
-        </p>
-      </div>
+      <IntroSlider />
 
       <div className="section right">
         <h2>Section 2</h2>
