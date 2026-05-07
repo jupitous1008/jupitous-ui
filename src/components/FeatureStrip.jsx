@@ -5,6 +5,8 @@ import {
   Headphones,
 } from "lucide-react";
 
+import "../style/FeatureStrip.scss";
+
 const features = [
   {
     icon: ShieldCheck,
@@ -34,81 +36,21 @@ const features = [
 
 export default function FeatureStrip() {
   return (
-    <div
-      style={{
-        width: "100%",
-
-        // ✅ CHANGE HERE
-        // BEFORE: background: "#f5f5f5",
-        background: "transparent",
-
-        // ✅ CHANGE HERE
-        // BEFORE: padding: "40px 20px",
-        padding: "0px 20px",
-
-        display: "flex",
-        justifyContent: "center",
-
-        // ✅ ADD HERE
-        marginTop: "-65px",
-
-        // ✅ ADD HERE
-        position: "relative",
-        zIndex: 20,
-      }}
-    >
-      {/* MAIN CARD */}
-      <div
-        style={{
-          width: "100%",
-          maxWidth: "1400px",
-          background: "#fff",
-          borderRadius: "20px",
-          boxShadow: "0 5px 20px rgba(0,0,0,0.08)",
-          overflow: "hidden",
-        }}
-      >
-        {/* HORIZONTAL CONTAINER */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-between",
-            width: "100%",
-          }}
-        >
+    <div className="feature-strip-wrapper">
+      <div className="feature-strip-card">
+        <div className="feature-strip-container">
           {features.map((item, index) => {
             const Icon = item.icon;
 
             return (
               <div
                 key={index}
-                style={{
-                  flex: 1,
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "16px",
-                  padding: "30px",
-                  borderRight:
-                    index !== features.length - 1
-                      ? "1px solid #e5e7eb"
-                      : "none",
-                }}
+                className={`feature-item ${
+                  index !== features.length - 1 ? "border-right" : ""
+                }`}
               >
                 {/* ICON */}
-                <div
-                  style={{
-                    width: "56px",
-                    height: "56px",
-                    borderRadius: "14px",
-                    background: "#f9fafb",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    flexShrink: 0,
-                  }}
-                >
+                <div className="feature-icon-box">
                   <Icon
                     size={30}
                     color={item.color}
@@ -117,27 +59,9 @@ export default function FeatureStrip() {
                 </div>
 
                 {/* TEXT */}
-                <div>
-                  <h3
-                    style={{
-                      fontSize: "18px",
-                      fontWeight: "600",
-                      color: "#111827",
-                      marginBottom: "6px",
-                    }}
-                  >
-                    {item.title}
-                  </h3>
-
-                  <p
-                    style={{
-                      fontSize: "14px",
-                      color: "#6b7280",
-                      lineHeight: "22px",
-                    }}
-                  >
-                    {item.desc}
-                  </p>
+                <div className="feature-content">
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
                 </div>
               </div>
             );

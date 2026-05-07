@@ -7,8 +7,8 @@
 /* TOP BAR */
 .topbar {
   width: 100%;
-  background: #f6a800;
-  color: white;
+  background: rgb(222, 235, 240);
+  color: #3f464d;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,8 +18,8 @@
 }
 
 .topbar.show {
-  height: 50px;
-  opacity: 1;
+  height: 35px;
+  opacity: 1
 }
 
 .topbar.hide {
@@ -51,13 +51,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #0A66C2; 
+}
+
+
+.mail-text {
+  color: #0A66C2; 
+  font-size: 14px;
+  font-weight: bold;
 }
 
 /* HEADER */
 .header {
   width: 100%;
   height: 90px;
-  background: #3f464d;
+  background: #182a5b;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -98,6 +106,122 @@
   cursor: pointer;
 }
 
+.instagram-icon {
+  color: #E1306C;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.instagram-icon:hover {
+  transform: scale(1.1);
+}
+
+.facebook-icon {
+  color: #1877F2;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.facebook-icon:hover {
+  transform: scale(1.1);
+}
+
+.linkedin-icon {
+  color: #0A66C2;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.linkedin-icon:hover {
+  transform: scale(1.1);
+}
+
+.youtube-icon {
+  color: #FF0000;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.youtube-icon:hover {
+  transform: scale(1.1);
+}
+
+/* TOLL FREE SECTION */
+
+.call-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-right: 25px;
+}
+
+.call-icon-wrapper {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  background: #2d9934;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.call-icon {
+  color: white;
+}
+
+.call-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.call-text span {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.call-text h4 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.phone-number {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* HOVER COLOR */
+.phone-number:hover {
+  color: #2d9934;
+}
+
+/* ANIMATED UNDERLINE */
+.phone-number::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #2d9934;
+  transition: width 0.4s ease;
+}
+
+.phone-number:hover::after {
+  width: 100%;
+}
+
+
 /* MOBILE */
 @media (max-width: 768px) {
   .hamburger {
@@ -127,4 +251,8 @@
   .topbar-left {
     font-size: 13px;
   }
+
+  .call-section {
+    display: none;
+}
 }

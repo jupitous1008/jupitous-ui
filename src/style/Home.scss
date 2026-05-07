@@ -8,7 +8,8 @@
 /* Body */
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, #f5f7fa, #e4ecf7);
+  background: greenyellow;
+  //background: linear-gradient(to bottom, #f5f7fa, #e4ecf7);
 }
 
 /* Section Base */
@@ -24,13 +25,13 @@ body {
 /* Left Side */
 .section.left {
   transform: translateX(-200px);
-  background: #ffffff;
+ // background: #ffffff;
 }
 
 /* Right Side */
 .section.right {
   transform: translateX(200px);
-  background: #eef4ff;
+  //background: #eef4ff;
 }
 
 /* Visible State */

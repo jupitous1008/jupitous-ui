@@ -1,6 +1,7 @@
 @use "./style/Header.scss";
 @use "./style/Home.scss";
 @use "./style/Footer.scss";
+@use "./style/FeatureStrip.scss";
 
 
 *{
@@ -14,6 +15,13 @@
   color:white;
   margin: 0;
   }
+
+  html,
+body,
+#root {
+  overflow-x: hidden;
+  width: 100%;
+}
 
   .app {
   padding-top: 0px; /* 👈 header height ke equal */

@@ -1,7 +1,14 @@
 import { useEffect, useState } from "react";
 import "../style/Header.scss";
 import logo from "../assets/jupitous_logo.png";
-import { Mail } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
+
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaYoutube,
+} from "react-icons/fa";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -31,16 +38,30 @@ function Header() {
         
         {/* LEFT */}
         <div className="topbar-left">
-          <Mail size={18} />
-          <span>info@jupitous.com</span>
+          <Mail className="mail-icon" size={18} />
+          <span className="mail-text">info@jupitous.com</span>
         </div>
 
         {/* RIGHT */}
         <div className="topbar-right">
-          <i className="fab fa-instagram"></i>
-          <i className="fab fa-facebook-f"></i>
-          <i className="fab fa-linkedin-in"></i>
-          <i className="fab fa-youtube"></i>
+
+          {/* TOLL FREE SECTION
+          <div className="call-section">
+            <div className="call-icon-wrapper">
+              <Phone size={22} className="call-icon" />
+            </div>
+
+            <div className="call-text">
+              <span>Call Anytime (Indian Toll Free)</span>
+              <h4>1800 120 5676</h4>
+            </div>
+          </div> */}
+
+          {/* SOCIAL ICONS */}
+          <FaInstagram size={18} className="instagram-icon" />
+          <FaFacebookF size={18} className="facebook-icon" />
+          <FaLinkedinIn size={18} className="linkedin-icon" />
+          <FaYoutube size={18} className="youtube-icon" />
         </div>
       </div>
 
@@ -51,6 +72,7 @@ function Header() {
         <div className="header-left">
           <img src={logo} alt="logo" className="logo-img" />
         </div>
+
 
         {/* HAMBURGER */}
         <div
@@ -67,6 +89,18 @@ function Header() {
           <a href="#">Products</a>
           <a href="#">Contact</a>
         </nav>
+
+             {/* TOLL FREE SECTION */}
+    <div className="call-section">
+      <div className="call-icon-wrapper">
+        <Phone size={22} className="call-icon" />
+      </div>
+
+      <div className="call-text">
+        <span>Call Anytime</span>
+        <h4 className="phone-number">+91 79882 00917</h4>
+      </div>
+    </div>
       </header>
     </>
   );
