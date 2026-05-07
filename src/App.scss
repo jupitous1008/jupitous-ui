@@ -2,6 +2,7 @@
 @use "./style/Home.scss";
 @use "./style/Footer.scss";
 
+
 *{
   margin:0;
   padding:0;
@@ -15,6 +16,6 @@
   }
 
   .app {
-  padding-top: 80px; /* 👈 header height ke equal */
+  padding-top: 0px; /* 👈 header height ke equal */
 }
   

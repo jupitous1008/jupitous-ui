@@ -4,14 +4,15 @@
   display: flex;;
   justify-content: center;
   overflow: hidden;
-  background: #f5f7fa;
-  margin-top: 10px;
+  background: red;
+  //background: #f1f5f7;
 }
 
 .slider-track {
   position: relative;
-  width: 90%;
-  height: 600px;
+  width: 80%;
+  height: 540px;
+  margin-top: 50px;
 
   /* 🔥 IMPORTANT FIX */
   overflow: visible;
@@ -43,14 +44,14 @@
 
 /* LEFT */
 .card.prev {
-  transform: translateX(-12%) scale(0.85);
+  transform: translateX(-18%) scale(0.85);
   z-index: 2;
   opacity: 0.6;
 }
 
 /* RIGHT */
 .card.next {
-  transform: translateX(12%) scale(0.85);
+  transform: translateX(18%) scale(0.85);
   z-index: 2;
   opacity: 0.6;
 }

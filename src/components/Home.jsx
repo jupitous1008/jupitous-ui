@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import "../style/Home.scss";
 import IntroSlider from "./IntroSlider";
+import Features from "./FeatureStrip";
+import FeatureStrip from "./FeatureStrip";
 
 function Home() {
   useEffect(() => {
@@ -25,6 +27,7 @@ function Home() {
   return (
     <>
       <IntroSlider />
+      <FeatureStrip />
 
       <div className="section right">
         <h2>Section 2</h2>
