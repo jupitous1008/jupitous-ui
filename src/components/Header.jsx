@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "../style/Header.scss";
 import logo from "../assets/jupitous_logo.png";
 import { Mail, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import {
   FaFacebookF,
@@ -13,23 +14,35 @@ import {
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showTopbar, setShowTopbar] = useState(true);
+  const [showStickyHeader, setShowStickyHeader] = useState(false);
 
   // SCROLL EFFECT
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 80) {
-        setShowTopbar(false);
-      } else {
-        setShowTopbar(true);
-      }
-    };
 
-    window.addEventListener("scroll", handleScroll);
+  const handleScroll = () => {
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    // HIDE TOPBAR
+    if (window.scrollY > 80) {
+      setShowTopbar(false);
+    } else {
+      setShowTopbar(true);
+    }
+
+    // SHOW FIXED HEADER AFTER SCROLL
+    if (window.scrollY > 140) {
+      setShowStickyHeader(true);
+    } else {
+      setShowStickyHeader(false);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
+
+}, []);
 
   return (
     <>
@@ -66,7 +79,7 @@ function Header() {
       </div>
 
       {/* HEADER */}
-      <header className={`header ${showTopbar ? "" : "sticky-header"}`}>
+      <header className={`header ${showStickyHeader ? "show-header" : ""}`}>
         
         {/* LOGO */}
         <div className="header-left">
@@ -84,11 +97,16 @@ function Header() {
 
         {/* MENU */}
         <nav className={`nav ${menuOpen ? "active" : ""}`}>
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Products</a>
-          <a href="#">Contact</a>
-        </nav>
+
+  <Link to="/">Home</Link>
+
+  <Link to="/about">About</Link>
+
+  <Link to="/products">Products</Link>
+
+  <Link to="/contact">Contact</Link>
+
+</nav>
 
              {/* TOLL FREE SECTION */}
     <div className="call-section">

@@ -1,34 +1,49 @@
+html,
+body,
+#root {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* TOP BAR */
+/* =========================
+   TOP GREEN STRIP
+========================= */
+.green-strip {
+  width: 100%;
+  height: 8px;
+  background: #9EF01A;
+}
+
+/* =========================
+   TOP BAR
+========================= */
 .topbar {
   width: 100%;
   background: rgb(222, 235, 240);
   color: #3f464d;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   padding: 12px 40px;
+
   transition: all 0.4s ease;
-  overflow: hidden;
+
+  position: relative;
+  z-index: 998;
 }
 
-.topbar.show {
-  height: 35px;
-  opacity: 1
-}
-
-.topbar.hide {
-  height: 0;
-  opacity: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
+/* TOPBAR RIGHT */
 .topbar-right {
   display: flex;
   gap: 18px;
@@ -36,10 +51,10 @@
   cursor: pointer;
 }
 
+/* TOPBAR LEFT */
 .topbar-left {
   display: flex;
   align-items: center;
-  color: white;
   font-size: 15px;
 }
 
@@ -47,45 +62,78 @@
   margin-left: 8px;
 }
 
+/* MAIL */
 .mail-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #0A66C2; 
+  color: #0A66C2;
 }
 
-
 .mail-text {
-  color: #0A66C2; 
+  color: #0A66C2;
   font-size: 14px;
   font-weight: bold;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 .header {
   width: 100%;
   height: 90px;
   background: #182a5b;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   padding: 0 40px;
-  position: sticky;
-  top: 0;
+
   z-index: 999;
+
   transition: all 0.4s ease;
+
+  position: relative;
 }
 
-.sticky-header {
+/* FIXED HEADER AFTER SCROLL */
+.header.show-header {
+   position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  animation: slideDown 0.4s ease forwards;
+
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+  z-index: 9999;
 }
 
-/* LOGO */
+/* HEADER ANIMATION */
+@keyframes slideDown {
+
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   LOGO
+========================= */
 .logo-img {
   height: 60px;
 }
 
-/* NAVIGATION */
+/* =========================
+   NAVIGATION
+========================= */
 .nav {
   display: flex;
   gap: 40px;
@@ -96,9 +144,16 @@
   text-decoration: none;
   font-size: 18px;
   font-weight: 600;
+  transition: 0.3s ease;
 }
 
-/* HAMBURGER */
+.nav a:hover {
+  color: #2d9934;
+}
+
+/* =========================
+   HAMBURGER
+========================= */
 .hamburger {
   display: none;
   font-size: 30px;
@@ -106,6 +161,9 @@
   cursor: pointer;
 }
 
+/* =========================
+   SOCIAL ICONS
+========================= */
 .instagram-icon {
   color: #E1306C;
   font-size: 20px;
@@ -150,8 +208,9 @@
   transform: scale(1.1);
 }
 
-/* TOLL FREE SECTION */
-
+/* =========================
+   CALL SECTION
+========================= */
 .call-section {
   display: flex;
   align-items: center;
@@ -159,21 +218,27 @@
   margin-right: 25px;
 }
 
+/* CALL ICON WRAPPER */
 .call-icon-wrapper {
   width: 52px;
   height: 52px;
   min-width: 52px;
+
   background: #2d9934;
+
   border-radius: 50%;
+
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* CALL ICON */
 .call-icon {
   color: white;
 }
 
+/* CALL TEXT */
 .call-text {
   display: flex;
   flex-direction: column;
@@ -193,6 +258,7 @@
   margin: 0;
 }
 
+/* PHONE NUMBER */
 .phone-number {
   position: relative;
   display: inline-block;
@@ -200,20 +266,23 @@
   transition: color 0.3s ease;
 }
 
-/* HOVER COLOR */
+/* PHONE HOVER */
 .phone-number:hover {
   color: #2d9934;
 }
 
-/* ANIMATED UNDERLINE */
+/* UNDERLINE EFFECT */
 .phone-number::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: -4px;
+
   width: 0;
   height: 2px;
+
   background: #2d9934;
+
   transition: width 0.4s ease;
 }
 
@@ -221,23 +290,33 @@
   width: 100%;
 }
 
-
-/* MOBILE */
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
 @media (max-width: 768px) {
+
   .hamburger {
     display: block;
   }
 
   .nav {
-    position: absolute;
+    position: fixed;
+
     top: 90px;
     right: -100%;
+
     width: 250px;
     height: 100vh;
+
     background: #3f464d;
+
     flex-direction: column;
+
     padding: 40px 20px;
+
     transition: 0.4s;
+
+    z-index: 999;
   }
 
   .nav.active {
@@ -252,7 +331,16 @@
     font-size: 13px;
   }
 
+  .header {
+    height: 80px;
+    padding: 0 20px;
+  }
+
+  .logo-img {
+    height: 50px;
+  }
+
   .call-section {
     display: none;
-}
+  }
 }

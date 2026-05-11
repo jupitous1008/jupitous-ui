@@ -3,6 +3,7 @@ import "../style/Home.scss";
 import IntroSlider from "./IntroSlider";
 import Features from "./FeatureStrip";
 import FeatureStrip from "./FeatureStrip";
+import Products from "./Products";
 
 function Home() {
   useEffect(() => {
@@ -28,14 +29,11 @@ function Home() {
     <>
       <IntroSlider />
       <FeatureStrip />
+      
+      <Products />
 
       <div className="section right">
-        <h2>Section 2</h2>
-        <p>
-          This section comes from the right side. Notice the smooth motion
-          and how the content feels more dynamic while scrolling.
-          Bigger layout makes the transition clearly visible.
-        </p>
+       
       </div>
 
       <div className="section left">
