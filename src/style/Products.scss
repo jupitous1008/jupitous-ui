@@ -1,4 +1,4 @@
-/* Products.css */
+/* Products.scss */
 
 .products-section {
 
@@ -13,7 +13,10 @@
   overflow: hidden;
 }
 
-/* BACKGROUND */
+
+/* ===================================
+   BACKGROUND
+=================================== */
 
 .bg-circle {
 
@@ -44,7 +47,10 @@
   right: -100px;
 }
 
-/* HEADING */
+
+/* ===================================
+   HEADING
+=================================== */
 
 .products-heading {
 
@@ -90,7 +96,10 @@
   line-height: 1.8;
 }
 
-/* SLIDER */
+
+/* ===================================
+   SLIDER
+=================================== */
 
 .products-slider-wrapper {
 
@@ -104,6 +113,7 @@
 
   z-index: 2;
 }
+
 
 /* IMPORTANT */
 
@@ -138,7 +148,10 @@
   box-sizing: border-box;
 }
 
-/* CARD */
+
+/* ===================================
+   CARD
+=================================== */
 
 .product-card {
 
@@ -146,7 +159,7 @@
 
   width: 100%;
 
-  min-height: 620px;
+  min-height: 560px;
 
   padding: 40px;
 
@@ -164,30 +177,80 @@
   transform: translateY(-10px);
 }
 
-/* BATTERY */
 
-.battery-card {
+/* ===================================
+   BATTERY CARD
+=================================== */
 
-  background-size: 100% 100%;
+.battery-card, .inverter-card, .solar-card {
+
+  background-size: cover;
 
   background-position: center;
+  height: 500px;
 
   background-repeat: no-repeat;
 
   color: white;
 }
 
-/* OTHER */
 
-.inverter-card,
-.solar-card {
 
-  background: white;
+/* ===================================
+   OTHER CARDS
+=================================== */
 
-  color: #182a5b;
+/* INVERTER SHOWCASE */
+.inverter-item {
+  position: relative;
+  bottom: 100px; /* move image upward */
+  right: 40px;
+
+  width: 100%;
 }
 
-/* TOP */
+/* IMAGE */
+.inverter-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+
+  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.15));
+}
+
+/* SOLAR IMAGE CONTAINER */
+.solar-item {
+  width: 100%;
+  height: 320px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+/* IMAGE */
+.solar-img {
+  max-width: 100%;
+  max-height: 100%;
+   background: white;
+
+  color: #182a5b;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+
+
+/* ===================================
+   TOP
+=================================== */
 
 .product-top {
 
@@ -205,6 +268,11 @@
   font-size: 32px;
 
   font-weight: 700;
+}
+
+.inverter-heading{
+  color: #182a5b;
+  font-weight: bold;
 }
 
 .icon-circle {
@@ -237,7 +305,10 @@
   border-radius: 10px;
 }
 
-/* LIST */
+
+/* ===================================
+   LIST
+=================================== */
 
 .product-card ul {
 
@@ -258,26 +329,30 @@
 
   margin-bottom: 18px;
 
-  font-size: 16px;
+  font-size: 18px;
 
   font-weight: 500;
 }
 
-/* BUTTON */
+.inverter{
+  color: #182a5b;
+  font-weight: bold;
+}
+
+
+/* ===================================
+   BUTTON
+=================================== */
 
 .view-btn {
 
-  position: absolute;
-
-  bottom: 15px;
-
-  left: 40px;
+  margin-top: 25px;
 
   border: none;
 
   background: transparent;
 
-  color: #182a5b;
+  color: white;
 
   font-size: 15px;
 
@@ -288,7 +363,155 @@
   cursor: pointer;
 }
 
-/* ARROWS */
+
+/* ===================================
+   BATTERY SHOWCASE
+=================================== */
+
+.battery-showcase {
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: flex-end;
+
+
+  margin-top: 30px;
+
+  flex-wrap: nowrap;
+}
+
+/* EACH BATTERY */
+.battery-item {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/* IMAGE SIZE */
+.battery-img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* INDIVIDUAL SIZES */
+.left_battery {
+  width: 380px;
+}
+
+.center-battery {
+  width: 480px;
+}
+
+.right-battery {
+  width: 380px;
+}
+
+
+/* ===================================
+   IMAGE CARD
+=================================== */
+
+.battery-image-card {
+
+  width: 170px;
+
+  background: rgba(255,255,255,0.12);
+
+  backdrop-filter: blur(12px);
+
+  border-radius: 24px;
+
+  padding: 18px;
+
+  text-align: center;
+
+  transition: all 0.4s ease;
+
+  cursor: pointer;
+
+  border: 1px solid rgba(255,255,255,0.15);
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.25);
+}
+
+
+/* CENTER CARD */
+
+.center-card {
+
+  transform: scale(1.08);
+}
+
+
+/* ===================================
+   IMAGE
+=================================== */
+
+.battery-image-card img {
+
+  width: 100%;
+
+  height: 140px;
+
+  object-fit: contain;
+
+  transition: transform 0.4s ease;
+}
+
+
+/* ===================================
+   TEXT
+=================================== */
+
+.battery-info {
+
+  margin-top: 14px;
+}
+
+.battery-info h3 {
+
+  color: #fff;
+
+  font-size: 18px;
+
+  font-weight: 700;
+}
+
+.battery-info p {
+
+  color: rgba(255,255,255,0.75);
+
+  font-size: 14px;
+
+  margin-top: 6px;
+}
+
+
+/* ===================================
+   HOVER EFFECT
+=================================== */
+
+.battery-image-card:hover {
+
+  transform: translateY(-12px);
+}
+
+.battery-image-card:hover img {
+
+  transform: scale(1.08);
+}
+
+
+
+/* ===================================
+   ARROWS
+=================================== */
 
 .custom-arrow {
 
@@ -314,8 +537,6 @@
   cursor: pointer;
 
   z-index: 20;
-
-  //box-shadow: 0 5px 20px rgba(0,0,0,0.15);
 }
 
 .prev-arrow {
@@ -333,7 +554,10 @@
   display: none;
 }
 
-/* MOBILE */
+
+/* ===================================
+   MOBILE
+=================================== */
 
 @media (max-width: 992px) {
 
@@ -341,13 +565,18 @@
 
     font-size: 42px;
   }
+
+  .product-card {
+
+    min-height: 860px;
+  }
 }
 
 @media (max-width: 768px) {
 
   .products-section {
 
-    padding: 70px 20px;
+    padding: 70px 0px;
   }
 
   .products-heading h1 {
@@ -357,9 +586,57 @@
 
   .product-card {
 
-    min-height: 520px;
+    min-height: 300px;
 
     padding: 30px;
+  }
+
+  .battery-card {
+
+  background-size: cover;
+
+  background-position: center;
+  height: 460px;
+
+  background-repeat: no-repeat;
+
+  color: white;
+}
+
+
+.view-btn {
+
+  margin-top: 5px;
+
+  border: none;
+
+  background: transparent;
+
+  color: blue;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  cursor: pointer;
+}
+
+.prev-arrow {
+
+  left: -6px;
+}
+
+.next-arrow {
+
+  right: -6px;
+}
+
+
+  .battery-image-card {
+
+    width: 145px;
   }
 
   .custom-arrow {

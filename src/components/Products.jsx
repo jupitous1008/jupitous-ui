@@ -8,13 +8,20 @@ import "../style/products.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import bgImage from "../assets/battery_product_bg.jpeg";
+import bgImage from "../assets/battery_bg.png";
+import centerBattery from "../assets/center_battery.png";
+import leftBattery from "../assets/left_battery.png";
+import rightBattery from "../assets/right_battery.png";
+import inverterBg from "../assets/inverter_bg.png";
+import inverterImage from "../assets/inverters_image.png";
+import solarBg from "../assets/solar_bg.png";
+import solarImage from "../assets/solar_img.png";
 
 import {
   BatteryCharging,
   Cpu,
   ArrowRight,
-  CircleArrowRight ,
+  CircleArrowRight,
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
@@ -152,26 +159,57 @@ function Products() {
               <ul>
 
                 <li>
-                  <CircleArrowRight  size={28} />
+                  <CircleArrowRight size={28} />
                   Home Inverter Batteries
                 </li>
 
                 <li>
-                  <CircleArrowRight  size={28} />
+                  <CircleArrowRight size={28} />
                   Automotive Batteries
                 </li>
 
                 <li>
-                  <CircleArrowRight  size={28} />
+                  <CircleArrowRight size={28} />
                   E-Rickshaw Batteries
                 </li>
 
               </ul>
 
+              {/* BATTERY SHOWCASE */}
+              <div className="battery-showcase">
+
+                <div className="battery-item left-item">
+                  <img
+                    src={leftBattery}
+                    alt="Left Battery"
+                    className="battery-img left_battery"
+                  />
+                </div>
+
+                <div className="battery-item center-item">
+                  <img
+                    src={centerBattery}
+                    alt="Center Battery"
+                    className="battery-img center-battery"
+                  />
+                </div>
+
+                <div className="battery-item right-item">
+                  <img
+                    src={rightBattery}
+                    alt="Right Battery"
+                    className="battery-img right-battery"
+                  />
+                </div>
+
+              </div>
+
               <button className="view-btn">
                 VIEW MORE
                 <div className="title-line"></div>
               </button>
+
+
 
             </div>
 
@@ -179,8 +217,14 @@ function Products() {
 
           {/* INVERTER CARD */}
           <div>
+            <div
+              className="product-card inverter-card"
+              style={{
+                backgroundImage: `url(${inverterBg})`,
+              }}
+            >
 
-            <div className="product-card inverter-card">
+              {/* <div className="product-card inverter-card"> */}
 
               <div className="product-top">
 
@@ -189,7 +233,7 @@ function Products() {
                 </div>
 
                 <div>
-                  <h2>Inverters</h2>
+                  <h2 className="inverter-heading">Inverters</h2>
                   <div className="title-line"></div>
                 </div>
 
@@ -197,22 +241,38 @@ function Products() {
 
               <ul>
 
-                <li>
-                  <ArrowRight size={18} />
+                <li className="inverter">
+                  <CircleArrowRight size={28} />
                   Home UPS / Inverters
                 </li>
 
-                <li>
-                  <ArrowRight size={18} />
+                <li className="inverter">
+                  <CircleArrowRight size={28} />
                   Solar Inverters
                 </li>
 
-                <li>
-                  <ArrowRight size={18} />
+                <li className="inverter">
+                  <CircleArrowRight color="#182a5b"
+                    size={28}
+                  />
                   Hybrid Inverters
                 </li>
 
               </ul>
+
+              {/* Inverter SHOWCASE */}
+
+              <div className="inverter-item">
+                <img
+                  src={inverterImage}
+                  alt="Inverter"
+                  className="inverter-img"
+                />
+
+
+              </div>
+
+
 
               <button className="view-btn">
                 VIEW MORE
@@ -223,9 +283,14 @@ function Products() {
           </div>
 
           {/* SOLAR CARD */}
+        
           <div>
-
-            <div className="product-card solar-card">
+            <div
+              className="product-card solar-card"
+              style={{
+                backgroundImage: `url(${solarBg})`,
+              }}
+            >
 
               <div className="product-top">
 
