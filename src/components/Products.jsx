@@ -65,7 +65,7 @@ function Products() {
 
     autoplay: true,
 
-    autoplaySpeed: 2500,
+    autoplaySpeed: 100000, //2500
 
     arrows: true,
 
@@ -104,8 +104,8 @@ function Products() {
     <section className="products-section">
 
       {/* BACKGROUND */}
-      <div className="bg-circle bg-circle-1"></div>
-      <div className="bg-circle bg-circle-2"></div>
+      {/* <div className="bg-circle bg-circle-1"></div>
+      <div className="bg-circle bg-circle-2"></div> */}
 
       {/* HEADING */}
       <div className="products-heading">
@@ -262,20 +262,19 @@ function Products() {
 
               {/* Inverter SHOWCASE */}
 
-              <div className="inverter-item">
+
+
+               <div className="inverter-item">
                 <img
                   src={inverterImage}
                   alt="Inverter"
                   className="inverter-img"
                 />
-
-
-              </div>
-
-
+              </div> 
 
               <button className="view-btn">
                 VIEW MORE
+                <div className="title-line"></div>
               </button>
 
             </div>
@@ -299,7 +298,7 @@ function Products() {
                 </div>
 
                 <div>
-                  <h2>Solar Panels</h2>
+                  <h2 className="solar-heading">Solar Panels</h2>
                   <div className="title-line"></div>
                 </div>
 
@@ -307,18 +306,18 @@ function Products() {
 
               <ul>
 
-                <li>
-                  <ArrowRight size={18} />
+                <li className="solar">
+                  <CircleArrowRight size={28} />
                   Mono PERC Panels
                 </li>
 
-                <li>
-                  <ArrowRight size={18} />
+                <li className="solar">
+                  <CircleArrowRight size={28} />
                   Polycrystalline Panels
                 </li>
 
-                <li>
-                  <ArrowRight size={18} />
+                <li className="solar">
+                  <CircleArrowRight size={28} />
                   Rooftop Solar Systems
                 </li>
 
@@ -326,6 +325,7 @@ function Products() {
 
               <button className="view-btn">
                 VIEW MORE
+                <div className="title-line"></div>
               </button>
 
             </div>

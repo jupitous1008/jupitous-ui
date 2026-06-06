@@ -28,7 +28,10 @@ function Home() {
   return (
     <>
       <IntroSlider />
+      
       <FeatureStrip />
+      {/* <div className="bg-circle bg-circle-1"></div> */}
+      {/* <div className="bg-circle bg-circle-2"></div> */}
       
       <Products />
 
@@ -37,6 +40,7 @@ function Home() {
       </div>
 
       <div className="section left">
+        
         <h2>Section 3</h2>
          <p>
           Again from the left. This alternating pattern creates a modern

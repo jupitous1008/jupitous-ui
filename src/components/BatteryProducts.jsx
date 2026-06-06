@@ -1,0 +1,280 @@
+import React, { useState } from "react";
+import {
+  Home,
+  Car,
+  Truck,
+  Shield,
+  Clock3,
+  Zap,
+  BadgeCheck,
+  BatteryCharging,
+  Users,
+  Headphones,
+  CalendarCheck
+} from "lucide-react";
+
+import "../style/BatteryProducts.scss";
+import batteryBG from "../assets/battery_detail_bg.png";
+import inverterBattery from "../assets/battery_image.png";
+import  { batteryProducts }  from "../data/batteryData";
+import AutomotiveBatteryPopup from "./AutomotiveBatteryPopup";
+import HomeInverterBatteryPopup from "./HomeInverterBatteryPopup";
+
+
+
+const BatteryProducts = () => {
+
+  const [showPopup, setShowPopup] = useState(false);
+  const [homeShowPopup, setHomeShowPopup] = useState(false);
+  return (
+    <div className="battery-page">
+
+      {/* HERO SECTION */}
+
+        {/* 1. HERO SECTION */}
+      <section className="battery-hero">
+        <div className="container">
+          {/* <span className="section-badge">ABOUT US</span> */}
+
+          <h1>Our Battery Range</h1>
+          <p>
+            High performance, long life & reliable batteries
+                designed for every need. Choose the right battery
+                that matches your power requirements.
+          </p>
+          {/* <button className="btn-hero">
+            Explore Our Journey <ArrowRight size={16} />
+          </button> */}
+
+          <a href="#our-story" className="btn-hero">
+  Explore Our Batteries
+  <span className="arrow">→</span>
+</a>
+        </div>
+      </section>
+
+
+      {/* HOME INVERTER */}
+      <section className="product-section">
+        <div className="product-image">
+          <img
+            src={inverterBattery}
+            alt=""
+          />
+        </div>
+
+        <div className="product-content">
+          <div className="title-row">
+            <div className="section-icon">
+              <Home size={25} />
+            </div>
+
+            <h2>Home Inverter Batteries</h2>
+          </div>
+          <p className="description">
+            {batteryProducts[0].description}
+          </p>
+
+          {/* <div className="feature-grid">
+
+            <div>
+              <Clock3 />
+              <span>Longer Backup</span>
+            </div>
+
+            <div>
+              <BatteryCharging />
+              <span>Low Maintenance</span>
+            </div>
+
+            <div>
+              <Zap />
+              <span>Fast Charging</span>
+            </div>
+
+            <div>
+              <Shield />
+              <span>High Reliability</span>
+            </div>
+
+          </div> */}
+
+          <button className="secondary-btn" onClick={() => setHomeShowPopup(true)}>
+            Read More →
+          </button>
+        </div>
+      </section>
+
+      {/* AUTOMOTIVE */}
+      <section className="product-section reverse">
+
+        <div className="product-content">
+
+          {/* <div className="section-icon">
+            <Car size={42} />
+          </div>
+
+          <h2>Automotive Batteries</h2> */}
+
+          <div className="title-row">
+            <div className="section-icon">
+              <Car size={25} />
+            </div>
+
+            <h2>Automotive Batteries</h2>
+          </div>
+
+          <p className="description">
+            {batteryProducts[1].description}
+          </p>
+
+          {/* <div className="feature-grid">
+
+            <div>
+              <Zap />
+              <span>High Cranking Power</span>
+            </div>
+
+            <div>
+              <Shield />
+              <span>Vibration Resistant</span>
+            </div>
+
+            <div>
+              <BadgeCheck />
+              <span>Maintenance Free</span>
+            </div>
+
+            <div>
+              <Clock3 />
+              <span>Long Service Life</span>
+            </div>
+
+          </div> */}
+
+          <button className="secondary-btn"
+          onClick={() => setShowPopup(true)}>
+            Read More →
+          </button>
+        </div>
+
+         {showPopup && (
+        <AutomotiveBatteryPopup
+          onClose={() => setShowPopup(false)}
+        />
+      )}
+
+      {homeShowPopup && (
+        <HomeInverterBatteryPopup
+          onClose={() => setHomeShowPopup(false)}
+        />
+      )}
+
+        <div className="product-image">
+          <img
+            src={inverterBattery}
+            alt=""
+          />
+        </div>
+      </section>
+
+      {/* E-RICKSHAW */}
+      <section className="product-section">
+
+        <div className="product-image">
+          <img
+            src={inverterBattery}
+            alt=""
+          />
+        </div>
+
+        <div className="product-content">
+
+          <div className="title-row">
+            <div className="section-icon">
+              <Truck size={25} />
+            </div>
+
+            <h2>E-Rickshaw Batteries</h2>
+          </div>
+
+          <p>
+            Specially designed for e-rickshaws, delivering
+            more mileage, faster charging and consistent
+            performance for longer journeys.
+          </p>
+
+          {/* <div className="feature-grid">
+
+            <div>
+              <BadgeCheck />
+              <span>More Mileage</span>
+            </div>
+
+            <div>
+              <Zap />
+              <span>Fast Charging</span>
+            </div>
+
+            <div>
+              <BatteryCharging />
+              <span>Deep Cycle Life</span>
+            </div>
+
+            <div>
+              <Shield />
+              <span>Rugged Design</span>
+            </div>
+
+          </div> */}
+
+          <button className="secondary-btn">
+            Read More →
+          </button>
+
+        </div>
+      </section>
+
+      {/* BOTTOM FEATURES */}
+
+      <section className="bottom-features">
+
+        <div className="feature-box">
+          <Shield />
+          <div>
+            <h4>High Performance</h4>
+            <p>Reliable & Powerful</p>
+          </div>
+        </div>
+
+        <div className="feature-box">
+          <CalendarCheck />
+          <div>
+            <h4>Long Lasting</h4>
+            <p>Built to Last Longer</p>
+          </div>
+        </div>
+
+        <div className="feature-box">
+          <Users />
+          <div>
+            <h4>Trusted by Thousands</h4>
+            <p>Quality You Can Trust</p>
+          </div>
+        </div>
+
+        <div className="feature-box">
+          <Headphones />
+          <div>
+            <h4>Expert Support</h4>
+            <p>We are here to help</p>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  );
+};
+
+export default BatteryProducts;

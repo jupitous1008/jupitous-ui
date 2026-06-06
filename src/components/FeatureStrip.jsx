@@ -35,10 +35,14 @@ const features = [
 ];
 
 export default function FeatureStrip() {
+  const circleStyle = { top: "50px" };
+
   return (
     <div className="feature-strip-wrapper">
       <div className="feature-strip-card">
         <div className="feature-strip-container">
+          <div className="bg-circle bg-circle-1" style={circleStyle}></div>
+
           {features.map((item, index) => {
             const Icon = item.icon;
 

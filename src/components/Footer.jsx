@@ -1,4 +1,6 @@
 import "../style/Footer.scss";
+import logo from "../assets/jupitous_logo.png";
+
 
 function Footer() {
   return (
@@ -7,7 +9,9 @@ function Footer() {
         
         {/* Column 1 */}
         <div className="footer-col">
-          <h3>MyCompany</h3>
+          {/* <h3>Jupitous PowerTech</h3> */}
+           {/* LOGO */}
+                    <img src={logo} alt="logo" className="logo-img" />
           <p>
             We build modern web experiences with smooth animations and
             scalable architecture. Focused on performance and design.
