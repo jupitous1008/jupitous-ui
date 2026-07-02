@@ -6,11 +6,15 @@
 
   width: 100%;
 
-  padding: 100px 40px;
+  padding: 50px 20px;
 
   background: #f5f7fb;
 
   overflow: hidden;
+}
+
+.swiper{
+  padding: 20px !important;
 }
 
 
@@ -63,15 +67,13 @@
   margin-bottom: 70px;
 }
 
-.products-tag {
-
-  color: #f4a000;
-
-  font-size: 14px;
-
-  font-weight: 700;
-
+.products-heading .products-tag {
+  color: #2d9934;
+  font-size: 16px;
+  font-weight: bold;
   letter-spacing: 3px;
+  display: inline-block;
+  text-transform: uppercase;
 }
 
 .products-heading h1 {
@@ -109,7 +111,7 @@
 
   overflow: hidden;
 
-  padding: 0 20px;
+  padding: 0 25px;
 
   z-index: 2;
 }
@@ -117,34 +119,71 @@
 
 /* IMPORTANT */
 
-.slick-slider {
+// .slick-slider {
 
+//   width: 100%;
+// }
+
+// .slick-list {
+
+//   overflow: hidden !important;
+// }
+
+// .slick-track {
+
+//   display: flex !important;
+// }
+
+// .slick-slide {
+
+//   height: inherit !important;
+
+//   display: flex !important;
+
+//   float: none !important;
+// }
+
+// .slick-slide > div {
+
+//   width: 100%;
+
+//   padding: 15px;
+
+//   box-sizing: border-box;
+// }
+
+/* ===================================
+   SLIDER
+=================================== */
+
+.products-slider-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 10px;
+  z-index: 2;
+}
+
+.slick-slider {
   width: 100%;
 }
 
 .slick-list {
-
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
 .slick-track {
-
   display: flex !important;
 }
 
 .slick-slide {
-
-  height: inherit !important;
-
-  display: flex !important;
+  float: none !important;
+  height: auto !important;
 }
 
 .slick-slide > div {
-
   width: 100%;
-
   padding: 15px;
-
   box-sizing: border-box;
 }
 
@@ -416,7 +455,7 @@
 .left_battery {
   margin-left: 120px;
   width: 280px;
-  height: 120px;
+  height: 130px;
 }
 
 .center-battery {
@@ -425,8 +464,9 @@
 }
 
 .right-battery {
+  margin-top: 35px;
   width: 280px;
-  height: 120px;
+  height: 130px;
   margin-right: 120px;
 }
 
@@ -560,12 +600,12 @@
 
 .prev-arrow {
 
-  left: -14px;
+  left: 3px;
 }
 
 .next-arrow {
 
-  right: -14px;
+  right: 3px;
 }
 
 .custom-arrow::before {
@@ -591,95 +631,220 @@
   }
 }
 
+/* ===================================
+   MOBILE
+=================================== */
+
 @media (max-width: 768px) {
 
   .products-section {
+    padding: 60px 15px;
+  }
 
-    padding: 70px 0px;
+  .swiper {
+    padding: 10px !important;
+    height: auto !important;
+    max-height: 620px;
+  }
+
+  .products-slider-wrapper {
+    padding: 0;
+    max-height: 640px;
+  }
+
+  .products-heading {
+    margin-bottom: 40px;
   }
 
   .products-heading h1 {
-
-    font-size: 34px;
+    font-size: 1.50rem;
+    line-height: 1.25;
   }
 
-  /* INVERTER SHOWCASE */
-.inverter-item {
-  position: relative;
-  bottom: 70px; /* move image upward */
-  right: -15px;
+  .products-heading p {
+    font-size: 15px;
+    padding: 0 15px;
+    line-height: 1.6;
+  }
 
+  /* ---------- SLIDER ---------- */
+
+  // .products-slider-wrapper {
+  //   padding: 0;
+  //   overflow: hidden;
+  // }
+
+  // .slick-slider {
+  //   width: 100%;
+  // }
+
+  .products-slider-wrapper {
+  padding: 0;
+}
+
+.products-heading .products-tag {
+    color: #2d9934;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    display: inline-block;
+    text-transform: uppercase;
+  }
+
+.slick-slide {
+  width: 100% !important;
+}
+
+.product-card {
   width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
-/* IMAGE */
-.inverter-img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 100px;
-  object-fit: contain;
-
-  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.15));
-}
-
-  .product-card {
-
-    min-height: 460px;
-
-    padding: 30px;
+  .slick-list {
+    overflow: hidden !important;
   }
 
-  .battery-card, .inverter-card, .solar-card {
-
-  background-size: 100% 100%;
-
-  background-position: center;
-  height: 460px;
-
-  background-repeat: no-repeat;
-
-  color: white;
-}
-
-
-.view-btn {
-
-  margin-top: 5px;
-
-  border: none;
-
-  background: transparent;
-
-  color: blue;
-
-  font-size: 15px;
-
-  font-weight: 700;
-
-  letter-spacing: 2px;
-
-  cursor: pointer;
-}
-
-.prev-arrow {
-
-  left: -6px;
-}
-
-.next-arrow {
-
-  right: -6px;
-}
-
-
-  .battery-image-card {
-
-    width: 145px;
+  .slick-track {
+    display: flex !important;
   }
+
+  .slick-slide {
+    float: none !important;
+    display: flex !important;
+    height: auto !important;
+  }
+
+  .slick-slide > div {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  /* ---------- CARD ---------- */
+
+  // .product-card {
+  //   width: 100%;
+  //   min-height: 520px;
+  //   padding: 25px;
+  //   border-radius: 18px;
+  // }
+
+  .battery-card,
+  .inverter-card,
+  .solar-card {
+    min-height: 420px;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* ---------- TOP ---------- */
+
+  .product-top {
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+
+  .product-top h2 {
+    font-size: 1.50rem;
+  }
+
+  .icon-circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* ---------- LIST ---------- */
+
+  .product-card ul li {
+    font-size: 16px;
+    margin-bottom: 14px;
+    gap: 10px;
+  }
+
+  /* ---------- BATTERY ---------- */
+
+  .battery-showcase {
+    margin-top: 3px;
+    bottom: 12px;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .left_battery {
+    width: 115px;
+    height: auto;
+    margin-left: 0;
+  }
+
+  .center-battery {
+    width: 100px;
+    height: auto;
+  }
+
+  .right-battery {
+    width: 115px;
+    height: auto;
+    margin-right: 0;
+    margin-top: 20px;
+  }
+
+  /* ---------- INVERTER ---------- */
+
+  .inverter-item {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 70px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .inverter-img {
+    width: 85%;
+    max-height: 200px;
+    object-fit: contain;
+    margin: -30px;
+  }
+
+  /* ---------- SOLAR ---------- */
+
+  .solar-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .solar-img {
+    width: 85%;
+    height: auto;
+  }
+
+  /* ---------- BUTTON ---------- */
+
+  .view-btn {
+    left: 25px;
+    bottom: 25px;
+    color: #fff;
+    font-size: 0.90rem;
+    letter-spacing: 1px;
+  }
+
+  /* ---------- ARROWS ---------- */
 
   .custom-arrow {
+    width: 42px;
+    height: 42px;
+  }
 
-    width: 45px;
-    height: 45px;
+  .prev-arrow {
+    left: -8px;
+  }
+
+  .next-arrow {
+    right: -8px;
   }
 }

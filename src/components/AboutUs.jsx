@@ -203,13 +203,13 @@ export default function AboutUs() {
             <button  onClick={() => window.location.href = '/contact'} className="btn-white">Get In Touch <ArrowRight size={16} /></button>
           </div>
           <div className="cta-graphic-side">
-            <div className="battery-standalone">
+            {/* <div className="battery-standalone">
               <div className="caps"><span></span><span></span><span></span></div>
               <div className="body">
                 <div className="logo-text">⚡ JUPITOUS</div>
                 <div className="badge-glow">⚡</div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 

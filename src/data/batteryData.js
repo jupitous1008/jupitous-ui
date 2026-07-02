@@ -13,5 +13,14 @@ Built to withstand varying power conditions, our batteries are engineered for hi
     description: `In today’s fast-moving world, vehicles are more than just a mode of transportation—they are an essential part of daily life, business operations, agriculture, logistics, and industrial activities. At the heart of every vehicle lies a dependable power source that ensures smooth engine starts, supports critical electrical systems, and delivers uninterrupted performance in every condition. Jupitous Automotive Batteries are designed to meet these demands with exceptional reliability, durability, and efficiency.
     
       Engineered using advanced battery technology and premium-quality materials, Jupitous Automotive Batteries provide the power needed to keep vehicles running at their best. Whether it is a passenger car navigating city roads, a commercial truck covering long distances, a tractor operating in demanding agricultural environments, or a utility vehicle performing essential tasks, Jupitous batteries deliver consistent and dependable performance every time.`
+  },
+  {
+    id: 3,
+    title: "E-Rickshaw Batteries",
+    description: `In today's rapidly growing electric mobility industry, reliable battery performance is essential for ensuring uninterrupted transportation and maximizing daily earnings. E-Rickshaw Batteries are specially designed to provide dependable power, long operating hours, and consistent performance, helping drivers complete more trips with confidence and efficiency.
+    
+    Manufactured using advanced battery technology and premium-quality materials, our E-Rickshaw Batteries deliver excellent deep-cycle performance, fast charging, and superior durability. Whether operating in busy city streets or rural routes, these batteries provide stable power output, longer backup, and reliable performance under demanding conditions.
+    
+    Built to withstand frequent charge-discharge cycles and rough road conditions, our batteries are engineered for maximum efficiency and extended service life. With low maintenance requirements, vibration-resistant construction, and enhanced safety features, they offer dependable performance while reducing operating costs and ensuring a smooth, reliable driving experience.`
   }
 ];

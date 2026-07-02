@@ -1,5 +1,5 @@
 // Colors & Variables
-$primary-green: #0da85f;
+$primary-green: #2d9934;
 $secondary-glow: #14c974;
 $text-dark: #121814;
 $text-neutral: #1e293b;
@@ -596,45 +596,45 @@ $white: #ffffff;
         display: flex;
         justify-content: center;
 
-        .battery-standalone {
-            width: 180px;
+        // .battery-standalone {
+        //     width: 180px;
 
-            .caps {
-                display: flex;
-                justify-content: space-around;
-                padding: 0 24px;
+        //     .caps {
+        //         display: flex;
+        //         justify-content: space-around;
+        //         padding: 0 24px;
 
-                span {
-                    width: 8px;
-                    height: 12px;
-                    background: rgba(255, 255, 255, 0.2);
-                    border-radius: 2px;
-                }
-            }
+        //         span {
+        //             width: 8px;
+        //             height: 12px;
+        //             background: rgba(255, 255, 255, 0.2);
+        //             border-radius: 2px;
+        //         }
+        //     }
 
-            .body {
-                background: rgba(255, 255, 255, 0.05);
-                border: 3px solid rgba(255, 255, 255, 0.15);
-                height: 110px;
-                border-radius: 8px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                position: relative;
+        //     .body {
+        //         background: rgba(255, 255, 255, 0.05);
+        //         border: 3px solid rgba(255, 255, 255, 0.15);
+        //         height: 110px;
+        //         border-radius: 8px;
+        //         display: flex;
+        //         flex-direction: column;
+        //         align-items: center;
+        //         justify-content: center;
+        //         position: relative;
 
-                .logo-text {
-                    font-size: 0.85rem;
-                    font-weight: 800;
-                    color: $secondary-glow;
-                }
+        //         .logo-text {
+        //             font-size: 0.85rem;
+        //             font-weight: 800;
+        //             color: $secondary-glow;
+        //         }
 
-                .badge-glow {
-                    margin-top: 8px;
-                    color: $white;
-                }
-            }
-        }
+        //         .badge-glow {
+        //             margin-top: 8px;
+        //             color: $white;
+        //         }
+        //     }
+        // }
     }
 
     .trust-footer-strip {

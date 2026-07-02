@@ -13,46 +13,51 @@ import {
   CalendarCheck
 } from "lucide-react";
 
+import { faCarBattery, faCarSide, faTaxi } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import "../style/BatteryProducts.scss";
-import batteryBG from "../assets/battery_detail_bg.png";
+//import batteryBG from "../assets/battery_detail_bg.png";
+import batteryBG from "../assets/battery_product_background.png";
 import inverterBattery from "../assets/battery_image.png";
-import  { batteryProducts }  from "../data/batteryData";
+import automotiveBattery from "../assets/automotive_battery.png";
+import eRickshawBattery from "../assets/e_rickshaw_battery.png";
+import { batteryProducts } from "../data/batteryData";
 import AutomotiveBatteryPopup from "./AutomotiveBatteryPopup";
 import HomeInverterBatteryPopup from "./HomeInverterBatteryPopup";
-
-
+import E_RickshawPopup from "./E_RickshawPopup";
+import CenterBattery from "../assets/center_battery.png";
+import LeftBattery from "../assets/left_battery.png";
+import RightBattery from "../assets/right_battery.png";
 
 const BatteryProducts = () => {
 
   const [showPopup, setShowPopup] = useState(false);
   const [homeShowPopup, setHomeShowPopup] = useState(false);
+  const [eRickshawShowPopup, setERickshawShowPopup] = useState(false);
   return (
     <div className="battery-page">
 
       {/* HERO SECTION */}
 
-        {/* 1. HERO SECTION */}
+      {/* 1. HERO SECTION */}
       <section className="battery-hero">
+        <img className="img_hero" src={batteryBG} alt="Battery Background" />
+
         <div className="container">
-          {/* <span className="section-badge">ABOUT US</span> */}
-
-          <h1>Our Battery Range</h1>
-          <p>
-            High performance, long life & reliable batteries
-                designed for every need. Choose the right battery
-                that matches your power requirements.
-          </p>
-          {/* <button className="btn-hero">
-            Explore Our Journey <ArrowRight size={16} />
-          </button> */}
-
-          <a href="#our-story" className="btn-hero">
-  Explore Our Batteries
-  <span className="arrow">→</span>
-</a>
+          <div className="hero-left hero-text-box">
+            <h1>Our Battery Range</h1>
+            <p>
+              High performance, long life & reliable batteries designed for every need.
+              Choose the right battery that matches your power requirements.
+            </p>
+          </div>
+           <a href="#" className="btn-hero">
+              Explore Our Batteries
+              <span className="arrow">→</span>
+            </a>
         </div>
       </section>
-
 
       {/* HOME INVERTER */}
       <section className="product-section">
@@ -66,7 +71,7 @@ const BatteryProducts = () => {
         <div className="product-content">
           <div className="title-row">
             <div className="section-icon">
-              <Home size={25} />
+              <FontAwesomeIcon icon={faCarBattery} />
             </div>
 
             <h2>Home Inverter Batteries</h2>
@@ -118,7 +123,7 @@ const BatteryProducts = () => {
 
           <div className="title-row">
             <div className="section-icon">
-              <Car size={25} />
+              <FontAwesomeIcon icon={faCarSide} />
             </div>
 
             <h2>Automotive Batteries</h2>
@@ -153,26 +158,32 @@ const BatteryProducts = () => {
           </div> */}
 
           <button className="secondary-btn"
-          onClick={() => setShowPopup(true)}>
+            onClick={() => setShowPopup(true)}>
             Read More →
           </button>
         </div>
 
-         {showPopup && (
-        <AutomotiveBatteryPopup
-          onClose={() => setShowPopup(false)}
-        />
-      )}
+        {showPopup && (
+          <AutomotiveBatteryPopup
+            onClose={() => setShowPopup(false)}
+          />
+        )}
 
-      {homeShowPopup && (
-        <HomeInverterBatteryPopup
-          onClose={() => setHomeShowPopup(false)}
-        />
-      )}
+        {homeShowPopup && (
+          <HomeInverterBatteryPopup
+            onClose={() => setHomeShowPopup(false)}
+          />
+        )}
+
+        {eRickshawShowPopup && (
+          <E_RickshawPopup
+            onClose={() => setERickshawShowPopup(false)}
+          />
+        )}
 
         <div className="product-image">
           <img
-            src={inverterBattery}
+            src={automotiveBattery}
             alt=""
           />
         </div>
@@ -183,7 +194,7 @@ const BatteryProducts = () => {
 
         <div className="product-image">
           <img
-            src={inverterBattery}
+            src={eRickshawBattery}
             alt=""
           />
         </div>
@@ -192,16 +203,14 @@ const BatteryProducts = () => {
 
           <div className="title-row">
             <div className="section-icon">
-              <Truck size={25} />
+              <FontAwesomeIcon icon={faTaxi} />
             </div>
 
             <h2>E-Rickshaw Batteries</h2>
           </div>
 
-          <p>
-            Specially designed for e-rickshaws, delivering
-            more mileage, faster charging and consistent
-            performance for longer journeys.
+          <p className="description">
+            {batteryProducts[2].description}
           </p>
 
           {/* <div className="feature-grid">
@@ -228,7 +237,7 @@ const BatteryProducts = () => {
 
           </div> */}
 
-          <button className="secondary-btn">
+          <button className="secondary-btn" onClick={() => setERickshawShowPopup(true)}>
             Read More →
           </button>
 
@@ -237,7 +246,7 @@ const BatteryProducts = () => {
 
       {/* BOTTOM FEATURES */}
 
-      <section className="bottom-features">
+      {/* <section className="bottom-features">
 
         <div className="feature-box">
           <Shield />
@@ -271,7 +280,7 @@ const BatteryProducts = () => {
           </div>
         </div>
 
-      </section>
+      </section> */}
 
     </div>
   );

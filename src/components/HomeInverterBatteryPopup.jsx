@@ -1,22 +1,23 @@
 import React from "react";
 import {
-  Zap,
-  Shield,
-  Droplets,
-  Truck,
-  Car,
-  Tractor,
   CheckCircle,
-  X,
+  X
 } from "lucide-react";
 
 import {
-  faCar,
-  faTaxi,
-  faTruckPickup,
-  faTruck,
-  faTractor,
-  faVanShuttle,
+  faHouse,
+  faBuilding,
+  faLaptop,
+  faStore,
+  faGraduationCap,
+  faHospital,
+  faDesktop,
+  faBatteryFull,
+  faBolt,
+  faScrewdriverWrench,
+  faGaugeHigh,
+  faAward,
+  faShieldHalved
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -40,7 +41,7 @@ const HomeInverterBatteryPopup = ({ onClose }) => {
 
           <div className="hero-grid">
             <div className="intro">
-              <p className="description">
+              <p className="description_pop">
                 {batteryProducts[0].description}
               </p>
             
@@ -50,22 +51,22 @@ const HomeInverterBatteryPopup = ({ onClose }) => {
               <h2>WHY CHOOSE OUR HOME INVERTER BATTERIES?</h2>
               <div className="pop-title-line"></div>
               <div className="feature">
-                <Zap /> <div><h4>Long Backup Duration</h4><p>Provides uninterrupted power for extended periods.</p></div>
+                <FontAwesomeIcon icon={faBatteryFull} size="lg" /> <div><h4>Long Backup Duration</h4><p>Provides uninterrupted power for extended periods.</p></div>
               </div>
               <div className="feature">
-                <Shield /> <div><h4>Fast Charging Technology</h4><p>Recharges quickly to stay ready for the next outage.</p></div>
+                <FontAwesomeIcon icon={faBolt} size="lg" /> <div><h4>Fast Charging Technology</h4><p>Recharges quickly to stay ready for the next outage.</p></div>
               </div>
               <div className="feature">
-                <Droplets /> <div><h4>Low Maintenance</h4><p>Designed for hassle-free operation and easy upkeep.</p></div>
+                <FontAwesomeIcon icon={faScrewdriverWrench} size="lg" /> <div><h4>Low Maintenance</h4><p>Designed for hassle-free operation and easy upkeep.</p></div>
               </div>
               <div className="feature">
-                <Truck /> <div><h4>High Efficiency Performance</h4><p>Delivers consistent power with minimal energy loss.</p></div>
+                <FontAwesomeIcon icon={faGaugeHigh} size="lg" /> <div><h4>High Efficiency Performance</h4><p>Delivers consistent power with minimal energy loss.</p></div>
               </div>
               <div className="feature">
-                <Zap /> <div><h4>Durable Construction</h4><p>Built to withstand frequent charge-discharge cycles.</p></div>
+                <FontAwesomeIcon icon={faAward} size="lg" /> <div><h4>Durable Construction</h4><p>Built to withstand frequent charge-discharge cycles.</p></div>
               </div>
               <div className="feature">
-                <Shield /> <div><h4>Safe & Reliable Design</h4><p>Enhanced safety features ensure dependable operation.</p></div>
+                <FontAwesomeIcon icon={faShieldHalved} size="lg" /> <div><h4>Safe & Reliable Design</h4><p>Enhanced safety features ensure dependable operation.</p></div>
               </div>
             </div>
           </div>
@@ -77,25 +78,25 @@ const HomeInverterBatteryPopup = ({ onClose }) => {
             <div className="card-header">SUITABLE APPLICATIONS</div>
             <ul className="list">
   <li>
-    <FontAwesomeIcon icon={faCar} size="lg" /> Residential Homes
+    <FontAwesomeIcon icon={faHouse} size="lg" /> Residential Homes
   </li>
   <li>
-    <FontAwesomeIcon icon={faTaxi} size="lg" /> Apartments & Flats
+    <FontAwesomeIcon icon={faBuilding} size="lg" /> Apartments & Flats
   </li>
   <li>
-    <FontAwesomeIcon icon={faCar} size="lg" /> Home Offices
+    <FontAwesomeIcon icon={faLaptop} size="lg" /> Home Offices
   </li>
   <li>
-    <FontAwesomeIcon icon={faTruckPickup} size="lg" /> Small Shops & Retail Stores
+    <FontAwesomeIcon icon={faStore} size="lg" /> Small Shops & Retail Stores
   </li>
   <li>
-    <FontAwesomeIcon icon={faTruck} size="lg" /> Educational Institutions
+    <FontAwesomeIcon icon={faGraduationCap} size="lg" /> Educational Institutions
   </li>
   <li>
-    <FontAwesomeIcon icon={faTractor} size="lg" /> Clinics & Healthcare Centers
+    <FontAwesomeIcon icon={faHospital} size="lg" /> Clinics & Healthcare Centers
   </li>
   <li>
-    <FontAwesomeIcon icon={faVanShuttle} size="lg" /> Computers & Networking Equipment
+    <FontAwesomeIcon icon={faDesktop} size="lg" /> Computers & Networking Equipment
   </li>
 </ul>
           </div>

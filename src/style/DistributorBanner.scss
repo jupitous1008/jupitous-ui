@@ -1,0 +1,232 @@
+.distributor-banner {
+  width: 100%;
+  padding-top: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 20px;
+
+  .banner-card {
+    background: #f8f9fc;
+    border-radius: 20px;
+    height: 270px;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: 1fr 420px 1fr;
+    align-items: center;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  }
+
+  .banner-section {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 32px 40px;
+
+    .icon {
+      width: 72px;
+      height: 72px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: #1f49b6;
+      font-size: 52px;
+      flex-shrink: 0;
+    }
+
+    .content {
+        margin-top: 0px;
+      h3 {
+        margin: 0 0 12px;
+        font-size: 22px;
+        font-weight: 700;
+        color: #162a63;
+        line-height: 1.2;
+      }
+
+      p {
+        margin: 0 0 22px;
+        font-size: 14px;
+        color: #404b5f;
+        line-height: 1.7;
+      }
+    }
+  }
+
+  .primary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+
+    background: #0f46c5;
+    color: #fff;
+
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    &:hover {
+      background: #0b39a3;
+      transform: translateY(-2px);
+    }
+
+    span {
+      font-size: 18px;
+    }
+  }
+
+  .image-section {
+    height: 100%;
+    min-height: 220px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      min-height: 100%;
+      object-fit: cover;
+
+      /* Parallelogram Shape */
+      clip-path: polygon(23% 0, 100% 0, 84% 100%, 0 100%);
+    }
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .distributor-banner {
+    .banner-card {
+      grid-template-columns: 1fr;
+    }
+
+    .image-section {
+      order: -1;
+      min-height: 260px;
+
+      img {
+        clip-path: none;
+      }
+    }
+
+    .banner-section {
+      padding: 30px;
+    }
+  }
+}
+
+/* Mobile */
+/* ===========================
+   Mobile View
+=========================== */
+
+@media (max-width: 768px) {
+
+  .distributor-banner {
+    padding: 15px;
+
+    .banner-card {
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      height: auto;
+    }
+
+    /* Top Section */
+    .banner-section:first-child {
+      order: 1;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      padding: 35px 25px 30px;
+      gap: 16px;
+
+      .icon {
+        width: 55px;
+        height: 55px;
+        font-size: 42px;
+      }
+
+      .content {
+        h3 {
+          font-size: 1.30rem;
+          line-height: 1.25;
+          margin-bottom: 14px;
+        }
+
+        p {
+          font-size: 15px;
+          line-height: 1.7;
+          margin-bottom: 0px;
+        }
+      }
+    }
+
+    /* Middle Image */
+    .image-section {
+      order: 2;
+      width: 100%;
+      height: 220px;
+      min-height: 220px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        /* Remove parallelogram */
+        clip-path: none;
+      }
+    }
+
+    /* Bottom Section */
+    .banner-section:last-child {
+      order: 3;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      padding: 35px 25px;
+      gap: 16px;
+
+      border-top: 1px solid #ececec;
+
+      .icon {
+        width: 55px;
+        height: 55px;
+        font-size: 42px;
+      }
+
+      .content {
+        h3 {
+          font-size: 1.30rem;
+          margin-bottom: 14px;
+        }
+
+        p {
+          font-size: 0.90rem;
+          line-height: 1.7;
+          margin-bottom: 0px;
+        }
+      }
+    }
+
+    .primary-btn {
+      width: 100%;
+      max-width: 220px;
+      justify-content: center;
+      padding: 14px 24px;
+      font-size: 0.90rem;
+      border-radius: 8px;
+    }
+  }
+
+}

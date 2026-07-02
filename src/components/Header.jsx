@@ -11,6 +11,8 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import BatteryProducts from "./BatteryProducts";
+import InverterProducts from "./InverterProducts";
+import SolarPanelProducts from "./SolarPanelProducts";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,22 +22,27 @@ function Header() {
   // SCROLL EFFECT
   useEffect(() => {
 
-  const handleScroll = () => {
+    const handleScroll = () => {
 
-    if (window.scrollY > 80) {
-      setShowStickyHeader(true);
-    } else {
-      setShowStickyHeader(false);
-    }
-  };
+      if (window.scrollY > 80) {
+        setShowStickyHeader(true);
+      } else {
+        setShowStickyHeader(false);
+      }
+    };
 
-  window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-  return () => {
-    window.removeEventListener("scroll", handleScroll);
-  };
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
 
-}, []);
+  }, []);
+
+  const closeMenu = () => {
+  setMenuOpen(false);
+  setProductMenuOpen(false);
+};
 
   return (
     <>
@@ -69,57 +76,63 @@ function Header() {
 
 
         {/* HAMBURGER */}
-        <div
-          className="hamburger"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          ☰
-        </div>
+       <div
+  className="hamburger"
+  onClick={() => setMenuOpen(!menuOpen)}
+>
+  {menuOpen ? "✕" : "☰"}
+</div>
 
         {/* MENU */}
         <nav className={`nav ${menuOpen ? "active" : ""}`}>
 
-          <Link to="/">Home</Link>
+  <Link to="/" onClick={closeMenu}>Home</Link>
 
-          <Link to="/about-us">About Us</Link>
+  <Link to="/about-us" onClick={closeMenu}>About Us</Link>
 
-          {/* <Link to="/products">Products</Link> */}
-          <div
-  className="nav-dropdown"
-  onMouseEnter={() => setProductMenuOpen(true)}
-  onMouseLeave={() => setProductMenuOpen(false)}
->
-  <div className="dropdown-trigger">
+  <div className="nav-dropdown">
 
-    <span>Products</span>
+    <div
+      className="dropdown-trigger"
+      onClick={() => setProductMenuOpen(!productMenuOpen)}
+    >
+      <span>Products</span>
 
-    <ChevronDown
-      size={18}
-      className={`dropdown-arrow ${
-        productMenuOpen ? "rotate" : ""
-      }`}
-    />
+      <ChevronDown
+        size={18}
+        className={`dropdown-arrow ${
+          productMenuOpen ? "rotate" : ""
+        }`}
+      />
+    </div>
+
+    <div className={`dropdown-menu ${productMenuOpen ? "show" : ""}`}>
+
+      <Link to="/batteries" onClick={closeMenu}>
+        Batteries
+      </Link>
+
+      <Link to="/inverters" onClick={closeMenu}>
+        Inverters
+      </Link>
+
+      <Link to="/solars" onClick={closeMenu}>
+        Solar Panels
+      </Link>
+
+    </div>
 
   </div>
 
-  <div
-    className={`dropdown-menu ${
-      productMenuOpen ? "show" : ""
-    }`}
-  >
-    <Link to="/battery" onClick={BatteryProducts}>Battery</Link>
+  <Link to="/distributors" onClick={closeMenu}>
+    Distributors
+  </Link>
 
-    <Link to="/inverter">Inverter</Link>
+  <Link to="/contact" onClick={closeMenu}>
+    Contact Us
+  </Link>
 
-    <Link to="/solar">Solar</Link>
-  </div>
-</div>
-
-          <Link to="/distributors">Distributors</Link>
-
-          <Link to="/contact">Contact</Link>
-
-        </nav>
+</nav>
 
         {/* TOLL FREE SECTION */}
         <div className="call-section">
@@ -129,7 +142,7 @@ function Header() {
 
           <div className="call-text">
             <span>Call Anytime</span>
-            <h4 className="phone-number">+91 79882 00917</h4>
+            <h4 className="phone-number">+91 8600 898959</h4>
           </div>
         </div>
       </header>

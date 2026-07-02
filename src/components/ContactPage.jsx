@@ -103,20 +103,34 @@ export default function ContactPage() {
   }, []);
 
   const handleCalendlyPopup = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
 
-    if (window.Calendly) {
+    // if (window.Calendly) {
 
-      window.Calendly.initPopupWidget({
-        url: 'https://calendly.com/jupitous1008/30min'
-      });
+    //   window.Calendly.initPopupWidget({
+    //     url: 'https://calendly.com/jupitous1008/30min'
+    //   });
 
-    } else {
+    // } else {
 
-      alert(
-        "Booking system is loading, please try again in a moment!"
-      );
-    }
+    //   alert(
+    //     "Booking system is loading, please try again in a moment!"
+    //   );
+    // }
+
+     e.preventDefault();
+
+  const calendlyUrl =
+    "https://calendly.com/jupitous1008/30min";
+
+  if (window.Calendly) {
+    window.Calendly.initPopupWidget({
+      url: calendlyUrl,
+    });
+  } else {
+    // Fallback: open booking page in new tab
+    window.open(calendlyUrl, "_blank", "noopener,noreferrer");
+  }
   };
 
   return (
@@ -402,7 +416,7 @@ export default function ContactPage() {
 
               {/* CALENDLY */}
 
-              <a
+              {/* <a
                 className="channel-card functional-action"
                 onClick={handleCalendlyPopup}
               >
@@ -417,7 +431,25 @@ export default function ContactPage() {
                   Schedule a virtual meeting
                 </p>
 
-              </a>
+              </a> */}
+
+              <button
+  type="button"
+  className="channel-card functional-action"
+  onClick={handleCalendlyPopup}
+>
+
+  <div className="channel-icon">
+    <Calendar />
+  </div>
+
+  <h3>Book a Free Consultation</h3>
+
+  <p>
+    Speak with our energy experts and get the right solution for your needs.
+  </p>
+
+</button>
 
             </div>
           </section>

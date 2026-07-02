@@ -1,12 +1,22 @@
 // Products.jsx
 
+//import React, { useRef, useEffect } from "react";
+//import Slider from "react-slick";
+
 import React from "react";
-import Slider from "react-slick";
+import { useNavigate } from "react-router-dom";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
 
 import "../style/products.scss";
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+//import "slick-carousel/slick/slick.css";
+//import "slick-carousel/slick/slick-theme.css";
+
 
 import bgImage from "../assets/battery_bg.png";
 import centerBattery from "../assets/center_battery.png";
@@ -20,6 +30,7 @@ import solarImage from "../assets/solar_img.png";
 import {
   BatteryCharging,
   Cpu,
+  Sun,
   ArrowRight,
   CircleArrowRight,
   ChevronLeft,
@@ -49,55 +60,68 @@ function PrevArrow(props) {
 }
 
 function Products() {
+  const navigate = useNavigate();
+  const circleStyle = { top: "50px" };
+
+  const handleViewMore = (path) => {
+    navigate(path);
+  };
+
+  //   const sliderRef = useRef(null);
+
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     if (sliderRef.current) {
+  //       sliderRef.current.slickGoTo(
+  //         sliderRef.current.innerSlider.state.currentSlide
+  //       );
+  //     }
+  //   };
+
+  //   window.addEventListener("resize", handleResize);
+
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, []);
 
   /* SLIDER SETTINGS */
-  const settings = {
+  //  const settings = {
+  //   dots: false,
+  //   infinite: true,
+  //   speed: 700,
+  //   slidesToShow: 2,
+  //   slidesToScroll: 1,
+  //   autoplay: true,
+  //   autoplaySpeed: 2500,
+  //   arrows: true,
+  //   centerMode: false,
+  //   variableWidth: false,
+  //   adaptiveHeight: false,
 
-    dots: false,
+  //   nextArrow: <NextArrow />,
+  //   prevArrow: <PrevArrow />,
 
-    infinite: true,
-
-    speed: 700,
-
-    slidesToShow: 2,
-
-    slidesToScroll: 1,
-
-    autoplay: true,
-
-    autoplaySpeed: 100000, //2500
-
-    arrows: true,
-
-    centerMode: false,
-
-    variableWidth: false,
-
-    adaptiveHeight: false,
-
-    nextArrow: <NextArrow />,
-
-    prevArrow: <PrevArrow />,
-
-    responsive: [
-
-      {
-        breakpoint: 992,
-
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-
-      {
-        breakpoint: 768,
-
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
+  //   responsive: [
+  //     {
+  //       breakpoint: 992,
+  //       settings: {
+  //         slidesToShow: 1,
+  //         slidesToScroll: 1,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 768,
+  //       settings: {
+  //         slidesToShow: 1,
+  //         slidesToScroll: 1,
+  //         infinite: true,
+  //         centerMode: false,
+  //         variableWidth: false,
+  //       },
+  //     },
+  //   ],
+  // };
 
   return (
 
@@ -109,10 +133,12 @@ function Products() {
 
       {/* HEADING */}
       <div className="products-heading">
+                  <div className="bg-circle bg-circle-1" style={circleStyle}></div>
 
-        <span className="products-tag">
+
+        <p className="products-tag">
           OUR PRODUCTS
-        </span>
+        </p>
 
         <h1>
           Reliable Power Solutions
@@ -131,10 +157,58 @@ function Products() {
       {/* SLIDER */}
       <div className="products-slider-wrapper">
 
-        <Slider {...settings}>
+        {/* Custom Arrows */}
+        <div className="custom-arrow prev-arrow">
+          <ChevronLeft size={24} />
+        </div>
+
+        <div className="custom-arrow next-arrow">
+          <ChevronRight size={24} />
+        </div>
+
+        {/* <Slider ref={sliderRef} {...settings}> */}
+
+        <Swiper
+          modules={[Navigation, Autoplay]}
+          navigation={{
+            prevEl: ".prev-arrow",
+            nextEl: ".next-arrow",
+          }}
+          loop={true}
+          spaceBetween={25}
+          autoplay={{
+            delay: 2500, 
+            disableOnInteraction: false,
+          }}
+          breakpoints={{
+            // Mobile
+            0: {
+              slidesPerView: 1,
+              spaceBetween: 15,
+            },
+
+            // Tablet
+            768: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+
+            // Laptop/Desktop
+            992: {
+              slidesPerView: 2,
+              spaceBetween: 25,
+            },
+
+            // Large Desktop
+            1200: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+          }}
+        >
 
           {/* BATTERY CARD */}
-          <div>
+          <SwiperSlide>
 
             <div
               className="product-card battery-card"
@@ -204,7 +278,7 @@ function Products() {
 
               </div>
 
-              <button className="view-btn">
+              <button className="view-btn" onClick={() => handleViewMore("/batteries")}>
                 VIEW MORE
                 <div className="title-line"></div>
               </button>
@@ -213,10 +287,10 @@ function Products() {
 
             </div>
 
-          </div>
+          </SwiperSlide>
 
           {/* INVERTER CARD */}
-          <div>
+          <SwiperSlide>
             <div
               className="product-card inverter-card"
               style={{
@@ -264,26 +338,26 @@ function Products() {
 
 
 
-               <div className="inverter-item">
+              <div className="inverter-item">
                 <img
                   src={inverterImage}
                   alt="Inverter"
                   className="inverter-img"
                 />
-              </div> 
+              </div>
 
-              <button className="view-btn">
+              <button className="view-btn" onClick={() => handleViewMore("/inverters")}>
                 VIEW MORE
                 <div className="title-line"></div>
               </button>
 
             </div>
 
-          </div>
+          </SwiperSlide>
 
           {/* SOLAR CARD */}
-        
-          <div>
+
+          <SwiperSlide>
             <div
               className="product-card solar-card"
               style={{
@@ -294,7 +368,7 @@ function Products() {
               <div className="product-top">
 
                 <div className="icon-circle">
-                  <Cpu size={34} />
+                  <Sun size={34} />
                 </div>
 
                 <div>
@@ -323,16 +397,17 @@ function Products() {
 
               </ul>
 
-              <button className="view-btn">
+              <button className="view-btn" onClick={() => handleViewMore("/solars")}>
                 VIEW MORE
                 <div className="title-line"></div>
               </button>
 
             </div>
 
-          </div>
+          </SwiperSlide>
 
-        </Slider>
+          {/* </Slider> */}
+        </Swiper>
 
       </div>
 

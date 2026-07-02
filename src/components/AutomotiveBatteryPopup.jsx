@@ -17,6 +17,12 @@ import {
     faTruck,
     faTractor,
     faVanShuttle,
+    faKey,
+  faClockRotateLeft,
+  faScrewdriverWrench,
+  faRoad,
+  faBolt,
+  faShieldHalved,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -40,7 +46,7 @@ const AutomotiveBatteryPopup = ({ onClose }) => {
 
                     <div className="hero-grid">
                         <div className="intro">
-                            <p className="description">
+                            <p className="description_pop">
                                 {batteryProducts[1].description}
                             </p>
 
@@ -59,22 +65,22 @@ const AutomotiveBatteryPopup = ({ onClose }) => {
                             <h2>WHY CHOOSE JUPITOUS AUTOMOTIVE BATTERIES?</h2>
                             <div className="pop-title-line"></div>
                             <div className="feature">
-                                <Zap /> <div><h4>High Cranking Power</h4><p>Delivers instant starting power for quick and reliable ignition.</p></div>
+                                <FontAwesomeIcon icon={faKey} size="lg" /> <div><h4>High Cranking Power</h4><p>Delivers instant starting power for quick and reliable ignition.</p></div>
                             </div>
                             <div className="feature">
-                                <Shield /> <div><h4>Long Service Life</h4><p>Advanced grid technology ensures extended battery life.</p></div>
+                                <FontAwesomeIcon icon={faClockRotateLeft} size="lg" /> <div><h4>Long Service Life</h4><p>Advanced grid technology ensures extended battery life.</p></div>
                             </div>
                             <div className="feature">
-                                <Droplets /> <div><h4>Low Maintenance</h4><p>Designed to minimize water loss and upkeep.</p></div>
+                                <FontAwesomeIcon icon={faScrewdriverWrench} size="lg" /> <div><h4>Low Maintenance</h4><p>Designed to minimize water loss and upkeep.</p></div>
                             </div>
                             <div className="feature">
-                                <Truck /> <div><h4>Vibration Resistant</h4><p>Built to withstand rough roads and movement.</p></div>
+                                <FontAwesomeIcon icon={faRoad} size="lg" /> <div><h4>Vibration Resistant</h4><p>Built to withstand rough roads and movement.</p></div>
                             </div>
                             <div className="feature">
-                                <Zap /> <div><h4>Fast Recharge Acceptance</h4><p>Efficient charging restores power quickly.</p></div>
+                                <FontAwesomeIcon icon={faBolt} size="lg" /> <div><h4>Fast Recharge Acceptance</h4><p>Efficient charging restores power quickly.</p></div>
                             </div>
                             <div className="feature">
-                                <Shield /> <div><h4>Leak-Proof & Safe Design</h4><p>Engineered for dependable performance and protection.</p></div>
+                                <FontAwesomeIcon icon={faShieldHalved} size="lg" /> <div><h4>Leak-Proof & Safe Design</h4><p>Engineered for dependable performance and protection.</p></div>
                             </div>
                         </div>
                     </div>

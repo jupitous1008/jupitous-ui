@@ -9,6 +9,8 @@ import Distributors from "./components/Distributors";
 import "./App.scss";
 import ContactPage from "./components/ContactPage";
 import BatteryProducts from "./components/BatteryProducts";
+import InverterProducts from "./components/InverterProducts";
+import SolarPanelProducts from "./components/SolarPanelProducts";
 import AboutUs from "./components/AboutUs";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -39,7 +41,7 @@ function App() {
           element={<Distributors />}
         />
 
-         {/* CONTACT */}
+        {/* CONTACT */}
         <Route
           path="/contact"
           element={<ContactPage />}
@@ -51,10 +53,19 @@ function App() {
           element={<AboutUs />}
         />
 
-         <Route
-    path="/battery"
-    element={<BatteryProducts />}
-  />
+        <Route
+          path="/batteries"
+          element={<BatteryProducts />}
+        />
+        <Route
+          path="/inverters"
+          element={<InverterProducts />}
+        />
+
+        <Route
+          path="/solars"
+          element={<SolarPanelProducts />}
+        />
 
       </Routes>
       <Footer />
