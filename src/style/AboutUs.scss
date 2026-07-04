@@ -554,7 +554,7 @@ $white: #ffffff;
         align-items: center;
 
         @media (min-width: 768px) {
-            grid-template-columns: 1fr 280px;
+            grid-template-columns: 1fr;
         }
     }
 
@@ -593,7 +593,7 @@ $white: #ffffff;
     }
 
     .cta-graphic-side {
-        display: flex;
+        display: none;
         justify-content: center;
 
         // .battery-standalone {

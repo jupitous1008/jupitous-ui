@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "../style/Header.scss";
-import logo from "../assets/jupitous_logo.png";
+import logo from "../assets/jupitous_logo_white.png";
 import { Mail, Phone, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -40,9 +40,9 @@ function Header() {
   }, []);
 
   const closeMenu = () => {
-  setMenuOpen(false);
-  setProductMenuOpen(false);
-};
+    setMenuOpen(false);
+    setProductMenuOpen(false);
+  };
 
   return (
     <>
@@ -52,17 +52,46 @@ function Header() {
         {/* LEFT */}
         <div className="topbar-left">
           <Mail className="mail-icon" size={18} />
-          <span className="mail-text">contact@jupitous.com</span>
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@jupitous.com"
+            className="mail-text"
+          >
+            contact@jupitous.com
+          </a>
         </div>
 
         {/* RIGHT */}
         <div className="topbar-right">
 
           {/* SOCIAL ICONS */}
-          <FaInstagram size={18} className="instagram-icon" />
+          <a
+            href="https://www.instagram.com/life.with.jupitous/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <FaInstagram size={18} className="instagram-icon" />
+          </a>
+
           <FaFacebookF size={18} className="facebook-icon" />
-          <FaLinkedinIn size={18} className="linkedin-icon" />
-          <FaYoutube size={18} className="youtube-icon" />
+
+          <a
+            href="https://www.linkedin.com/in/jupitous-powertech-b92a4541b/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <FaLinkedinIn size={18} className="linkedin-icon" />
+          </a>
+
+          <a
+            href="https://www.youtube.com/@life.with.jupitous"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+          >
+            <FaYoutube size={18} className="youtube-icon" />
+          </a>
         </div>
       </div>
 
@@ -76,63 +105,62 @@ function Header() {
 
 
         {/* HAMBURGER */}
-       <div
-  className="hamburger"
-  onClick={() => setMenuOpen(!menuOpen)}
->
-  {menuOpen ? "✕" : "☰"}
-</div>
+        <div
+          className="hamburger"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? "✕" : "☰"}
+        </div>
 
         {/* MENU */}
         <nav className={`nav ${menuOpen ? "active" : ""}`}>
 
-  <Link to="/" onClick={closeMenu}>Home</Link>
+          <Link to="/" onClick={closeMenu}>Home</Link>
 
-  <Link to="/about-us" onClick={closeMenu}>About Us</Link>
+          <Link to="/about-us" onClick={closeMenu}>About Us</Link>
 
-  <div className="nav-dropdown">
+          <div className="nav-dropdown">
 
-    <div
-      className="dropdown-trigger"
-      onClick={() => setProductMenuOpen(!productMenuOpen)}
-    >
-      <span>Products</span>
+            <div
+              className="dropdown-trigger"
+              onClick={() => setProductMenuOpen(!productMenuOpen)}
+            >
+              <span>Products</span>
 
-      <ChevronDown
-        size={18}
-        className={`dropdown-arrow ${
-          productMenuOpen ? "rotate" : ""
-        }`}
-      />
-    </div>
+              <ChevronDown
+                size={18}
+                className={`dropdown-arrow ${productMenuOpen ? "rotate" : ""
+                  }`}
+              />
+            </div>
 
-    <div className={`dropdown-menu ${productMenuOpen ? "show" : ""}`}>
+            <div className={`dropdown-menu ${productMenuOpen ? "show" : ""}`}>
 
-      <Link to="/batteries" onClick={closeMenu}>
-        Batteries
-      </Link>
+              <Link to="/batteries" onClick={closeMenu}>
+                Batteries
+              </Link>
 
-      <Link to="/inverters" onClick={closeMenu}>
-        Inverters
-      </Link>
+              <Link to="/inverters" onClick={closeMenu}>
+                Inverters
+              </Link>
 
-      <Link to="/solars" onClick={closeMenu}>
-        Solar Panels
-      </Link>
+              <Link to="/solars" onClick={closeMenu}>
+                Solar Panels
+              </Link>
 
-    </div>
+            </div>
 
-  </div>
+          </div>
 
-  <Link to="/distributors" onClick={closeMenu}>
-    Distributors
-  </Link>
+          <Link to="/distributors" onClick={closeMenu}>
+            Distributors
+          </Link>
 
-  <Link to="/contact" onClick={closeMenu}>
-    Contact Us
-  </Link>
+          <Link to="/contact" onClick={closeMenu}>
+            Contact Us
+          </Link>
 
-</nav>
+        </nav>
 
         {/* TOLL FREE SECTION */}
         <div className="call-section">

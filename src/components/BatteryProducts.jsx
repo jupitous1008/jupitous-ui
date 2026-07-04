@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   Home,
   Car,
@@ -35,6 +35,35 @@ const BatteryProducts = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [homeShowPopup, setHomeShowPopup] = useState(false);
   const [eRickshawShowPopup, setERickshawShowPopup] = useState(false);
+  const homeBatteryRef = useRef(null);
+
+  const scrollToHomeBatteries = () => {
+    const element = homeBatteryRef.current;
+    if (!element) return;
+
+    const targetPosition = element.getBoundingClientRect().top + window.scrollY - 100;
+    const startPosition = window.scrollY;
+    const distance = targetPosition - startPosition;
+    const duration = 1500; // Slower scroll (1.5 seconds)
+    let start = null;
+
+    const animation = (currentTime) => {
+      if (start === null) start = currentTime;
+      const elapsed = currentTime - start;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // Easing function for smooth deceleration
+      const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+      
+      window.scrollTo(0, startPosition + distance * easeOutCubic);
+
+      if (progress < 1) {
+        requestAnimationFrame(animation);
+      }
+    };
+
+    requestAnimationFrame(animation);
+  };
   return (
     <div className="battery-page">
 
@@ -52,7 +81,7 @@ const BatteryProducts = () => {
               Choose the right battery that matches your power requirements.
             </p>
           </div>
-           <a href="#" className="btn-hero">
+           <a className="btn-hero" onClick={scrollToHomeBatteries}>
               Explore Our Batteries
               <span className="arrow">→</span>
             </a>
@@ -60,7 +89,7 @@ const BatteryProducts = () => {
       </section>
 
       {/* HOME INVERTER */}
-      <section className="product-section">
+      <section className="product-section" id="home-inverter-batteries" ref={homeBatteryRef}>
         <div className="product-image">
           <img
             src={inverterBattery}

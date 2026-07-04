@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import {
@@ -10,7 +10,7 @@ import {
   CheckCircle,
   ShieldCheck,
   Truck,
-  Headphones,
+  Headset,
   Plus
 } from 'lucide-react';
 
@@ -118,19 +118,50 @@ export default function ContactPage() {
     //   );
     // }
 
-     e.preventDefault();
+    e.preventDefault();
 
-  const calendlyUrl =
-    "https://calendly.com/jupitous1008/30min";
+    const calendlyUrl =
+      "https://calendly.com/jupitous1008/30min";
 
-  if (window.Calendly) {
-    window.Calendly.initPopupWidget({
-      url: calendlyUrl,
-    });
-  } else {
-    // Fallback: open booking page in new tab
-    window.open(calendlyUrl, "_blank", "noopener,noreferrer");
-  }
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: calendlyUrl,
+      });
+    } else {
+      // Fallback: open booking page in new tab
+      window.open(calendlyUrl, "_blank", "noopener,noreferrer");
+    }
+  };
+
+  const contactUSRef = useRef(null);
+
+
+  const scrollToContactUS = () => {
+    const element = contactUSRef.current;
+    if (!element) return;
+
+    const targetPosition = element.getBoundingClientRect().top + window.scrollY - 100;
+    const startPosition = window.scrollY;
+    const distance = targetPosition - startPosition;
+    const duration = 1500; // Slower scroll (1.5 seconds)
+    let start = null;
+
+    const animation = (currentTime) => {
+      if (start === null) start = currentTime;
+      const elapsed = currentTime - start;
+      const progress = Math.min(elapsed / duration, 1);
+
+      // Easing function for smooth deceleration
+      const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+
+      window.scrollTo(0, startPosition + distance * easeOutCubic);
+
+      if (progress < 1) {
+        requestAnimationFrame(animation);
+      }
+    };
+
+    requestAnimationFrame(animation);
   };
 
   return (
@@ -152,7 +183,7 @@ export default function ContactPage() {
             Explore Our Journey <ArrowRight size={16} />
           </button> */}
 
-          <a href="#support-channels" className="btn-hero">
+          <a href="#" className="btn-hero" onClick={scrollToContactUS}>
             Let's Connect
             <span className="arrow">→</span>
           </a>
@@ -188,6 +219,7 @@ export default function ContactPage() {
       ========================= */}
 
       <main
+        ref={contactUSRef}
         id="support-channels"
         className="main-content"
       >
@@ -434,22 +466,22 @@ export default function ContactPage() {
               </a> */}
 
               <button
-  type="button"
-  className="channel-card functional-action"
-  onClick={handleCalendlyPopup}
->
+                type="button"
+                className="channel-card functional-action"
+                onClick={handleCalendlyPopup}
+              >
 
-  <div className="channel-icon">
-    <Calendar />
-  </div>
+                <div className="channel-icon">
+                  <Calendar />
+                </div>
 
-  <h3>Book a Free Consultation</h3>
+                <h3>Book a Free Consultation</h3>
 
-  <p>
-    Speak with our energy experts and get the right solution for your needs.
-  </p>
+                <p>
+                  Speak with our energy experts and get the right solution for your needs.
+                </p>
 
-</button>
+              </button>
 
             </div>
           </section>
@@ -471,7 +503,7 @@ export default function ContactPage() {
           <div className="feature-item">
 
             <div className="f-icon">
-              <Headphones />
+              <Headset />
             </div>
 
             <div>

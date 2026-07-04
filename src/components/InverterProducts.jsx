@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   Home,
   Car,
@@ -37,6 +37,39 @@ const InverterProducts = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [homeInverterShowPopup, setHomeInverterShowPopup] = useState(false);
   const [hybridInverterShowPopup, setHybridInverterShowPopup] = useState(false);
+  const homeInverterRef = useRef(null);
+
+const scrollToHomeInverter = () => {
+    const element = homeInverterRef.current;
+    if (!element) return;
+
+    const targetPosition = element.getBoundingClientRect().top + window.scrollY - 100;
+    const startPosition = window.scrollY;
+    const distance = targetPosition - startPosition;
+    const duration = 1500; // Slower scroll (1.5 seconds)
+    let start = null;
+
+    const animation = (currentTime) => {
+      if (start === null) start = currentTime;
+      const elapsed = currentTime - start;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // Easing function for smooth deceleration
+      const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+      
+      window.scrollTo(0, startPosition + distance * easeOutCubic);
+
+      if (progress < 1) {
+        requestAnimationFrame(animation);
+      }
+    };
+
+    requestAnimationFrame(animation);
+  };
+
+
+
+
   return (
     <div className="battery-page">
 
@@ -55,7 +88,7 @@ const InverterProducts = () => {
             </p>
            
           </div>
-            <a href="#" className="btn-hero">
+            <a href="#" className="btn-hero" onClick={scrollToHomeInverter}>
               Explore Our Inverters
               <span className="arrow">→</span>
             </a>
@@ -66,7 +99,7 @@ const InverterProducts = () => {
 
 
       {/* HOME INVERTER */}
-      <section className="product-section">
+      <section className="product-section" ref={homeInverterRef}>
         <div className="product-image">
           <img
             src={homeInverter}

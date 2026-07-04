@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import PolicyModal from "./PolicyModal";
+import PrivacyPolicyContent from "./PrivacyPolicyContent";
+import TermsConditionsContent from "./TermsConditionsContent";
 import {
   Phone,
   Mail,
@@ -10,10 +13,12 @@ import {
 import indiaMap from "../assets/india.png";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
-import logo from "../assets/jupitous_logo.png";
+import logo from "../assets/jupitous_logo_white.png";
 import "../style/Footer.scss";
 
 const Footer = () => {
+  const [showPrivacy, setShowPrivacy] = useState(false);
+  const [showTerms, setShowTerms] = useState(false);
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -22,7 +27,7 @@ const Footer = () => {
           <img src={logo} alt="JUPITOUS" className="footer-logo" />
 
           <p className="about">
-           JUPITOUS POWERTECH LLP is committed to delivering reliable and innovative power solutions across India. Our range of batteries, inverters, and solar products is designed to provide long-lasting performance, energy efficiency, and dependable backup for homes, businesses, and industrial applications.
+            JUPITOUS POWERTECH LLP is committed to delivering reliable and innovative power solutions across India. Our range of batteries, inverters, and solar products is designed to provide long-lasting performance, energy efficiency, and dependable backup for homes, businesses, and industrial applications.
           </p>
         </div>
 
@@ -31,27 +36,22 @@ const Footer = () => {
           <h3>Quick Links</h3>
 
           <ul>
-            <li>
+            <li onClick={() => window.location.href = '/'}>
               <ChevronRight size={18} />
               Home
             </li>
 
-            <li>
+            <li onClick={() => window.location.href = '/about-us'}>
               <ChevronRight size={18} />
               About Us
             </li>
 
-            <li>
-              <ChevronRight size={18} />
-              Products
-            </li>
-
-            <li>
+            <li onClick={() => window.location.href = '/distributors'}>
               <ChevronRight size={18} />
               Distributors
             </li>
 
-            <li>
+            <li onClick={() => window.location.href = '/contact'}>
               <ChevronRight size={18} />
               Contact Us
             </li>
@@ -63,47 +63,19 @@ const Footer = () => {
           <h3>Our Products</h3>
 
           <ul>
-            <li>
+            <li onClick={() => window.location.href = '/batteries'}>
               <ChevronRight size={18} />
-              Home Inverter Batteries
+              Battery Solutions
             </li>
 
-            <li>
+            <li onClick={() => window.location.href = '/inverters'}>
               <ChevronRight size={18} />
-              Automotive Batteries
+              Inverter Solutions
             </li>
 
-            <li>
+            <li onClick={() => window.location.href = '/solars'}>
               <ChevronRight size={18} />
-              E-Rickshaw Batteries
-            </li>
-
-            <li>
-              <ChevronRight size={18} />
-              Home UPS / Inverters
-            </li>
-
-            <li>
-              <ChevronRight size={18} />
-              Solar Inverters
-            </li>
-
-             <li>
-              <ChevronRight size={18} />
-              Hybrid Inverters
-            </li>
-
-             <li>
-              <ChevronRight size={18} />
-              Mono PERC Panels
-            </li>
-            <li>
-              <ChevronRight size={18} />
-              Polycrystalline Panels
-            </li>
-            <li>
-              <ChevronRight size={18} />
-              Rooftop Solar Panels
+              Solar Solutions
             </li>
           </ul>
         </div>
@@ -161,10 +133,37 @@ const Footer = () => {
           All Rights Reserved.
         </p>
 
-        <div className="footer-links">
+        {/* <div className="footer-links">
           <a href="/" className="light-text">Privacy Policy</a>
           <span>|</span>
           <a href="/" className="light-text">Terms & Conditions</a>
+        </div> */}
+
+        <div className="footer-links">
+
+
+          <a href="/"
+            className="light-text"
+            onClick={(e) => {
+              e.preventDefault();
+              setShowPrivacy(true);
+            }}
+          >
+            Privacy Policy
+          </a>
+
+          <span>|</span>
+
+          <a href="/"
+            className="light-text"
+            onClick={(e) => {
+              e.preventDefault();
+              setShowTerms(true);
+            }}
+          >
+            Terms & Conditions
+          </a>
+
         </div>
 
         <div className="social-icons">
@@ -172,15 +171,43 @@ const Footer = () => {
             <FaFacebookF size={18} />
           </a>
 
-          <a href="/">
+          <a
+            href="https://www.instagram.com/life.with.jupitous/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
             <FaInstagram size={18} />
           </a>
 
-          <a href="/">
+
+          <a
+            href="https://www.linkedin.com/in/jupitous-powertech-b92a4541b/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
             <FaLinkedinIn size={18} />
           </a>
+
         </div>
       </div>
+
+      <PolicyModal
+        isOpen={showPrivacy}
+        onClose={() => setShowPrivacy(false)}
+        title="Privacy Policy"
+      >
+        <PrivacyPolicyContent />
+      </PolicyModal>
+
+      <PolicyModal
+        isOpen={showTerms}
+        onClose={() => setShowTerms(false)}
+        title="Terms & Conditions"
+      >
+        <TermsConditionsContent />
+      </PolicyModal>
     </footer>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   Home,
   Car,
@@ -38,6 +38,37 @@ const SolarPanelProducts = () => {
   const [polycrystallinePopup, setPolycrystallinePopup] = useState(false);
   const [monoPercShowPopup, setMonoPercShowPopup] = useState(false);
   const [rooftopPopup, setRooftopPopup] = useState(false);
+  const solarPanelRef = useRef(null);
+
+
+  const scrollToSolarPanels = () => {
+    const element = solarPanelRef.current;
+    if (!element) return;
+
+    const targetPosition = element.getBoundingClientRect().top + window.scrollY - 100;
+    const startPosition = window.scrollY;
+    const distance = targetPosition - startPosition;
+    const duration = 1500; // Slower scroll (1.5 seconds)
+    let start = null;
+
+    const animation = (currentTime) => {
+      if (start === null) start = currentTime;
+      const elapsed = currentTime - start;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // Easing function for smooth deceleration
+      const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+      
+      window.scrollTo(0, startPosition + distance * easeOutCubic);
+
+      if (progress < 1) {
+        requestAnimationFrame(animation);
+      }
+    };
+
+    requestAnimationFrame(animation);
+  };
+
   return (
     <div className="battery-page">
 
@@ -56,7 +87,7 @@ const SolarPanelProducts = () => {
                   </p>
                  
                 </div>
-                  <a href="#" className="btn-hero">
+                  <a href="#" className="btn-hero" onClick={scrollToSolarPanels}>
                     Explore Our Solar Panels
                     <span className="arrow">→</span>
                   </a>
@@ -68,7 +99,7 @@ const SolarPanelProducts = () => {
 
 
       {/* HOME INVERTER */}
-      <section className="product-section">
+      <section className="product-section" ref={solarPanelRef}>
         <div className="product-image">
           <img
             src={monoPerc}

@@ -69,7 +69,6 @@ export default function Dashboard() {
             <section className='distributors-hero'>
                 <div className='hero-overlay'>
                     <div className='hero-copy'>
-                        <span className='hero-tag'>Distributor Network</span>
                         <h1>India Distributor Network</h1>
                         <p>Explore active and upcoming distributor hubs across India with live interactive map navigation.</p>
 

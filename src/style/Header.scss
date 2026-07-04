@@ -64,17 +64,46 @@
 }
 
 /* MAIL */
-.mail-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #0A66C2;
-}
+
+
+// .mail-text {
+//   color: #0A66C2;
+//   font-size: 14px;
+//   padding-left: 5px;
+//   font-weight: bold;
+// }
 
 .mail-text {
-  color: #0A66C2;
-  font-size: 14px;
+  position: relative;
+font-size: 14px;
+  padding-left: 5px;
   font-weight: bold;
+  color: #0A66C2;
+  text-decoration: none;
+
+  transition: color 0.3s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+
+    width: 0;
+    height: 2px;
+
+    background: #4db43b;
+
+    transition: width 0.35s ease;
+  }
+
+  &:hover {
+    color: #4db43b;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
 }
 
 /* =========================

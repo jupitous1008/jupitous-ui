@@ -1,8 +1,8 @@
 import {
   ShieldCheck,
-  Zap,
+  Gauge,
   Leaf,
-  Headphones,
+  Headset,
 } from "lucide-react";
 
 import "../style/FeatureStrip.scss";
@@ -15,7 +15,7 @@ const features = [
     color: "#22c55e",
   },
   {
-    icon: Zap,
+    icon: Gauge,
     title: "High Performance",
     desc: "Advanced technology for maximum efficiency.",
     color: "#2563eb",
@@ -27,7 +27,7 @@ const features = [
     color: "#22c55e",
   },
   {
-    icon: Headphones,
+    icon: Headset,
     title: "Customer Support",
     desc: "24/7 support for all your needs.",
     color: "#2563eb",

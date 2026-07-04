@@ -31,6 +31,7 @@ import {
   BatteryCharging,
   Cpu,
   Sun,
+  Zap,
   ArrowRight,
   CircleArrowRight,
   ChevronLeft,
@@ -303,7 +304,7 @@ function Products() {
               <div className="product-top">
 
                 <div className="icon-circle">
-                  <Cpu size={34} />
+                  <Zap size={34} />
                 </div>
 
                 <div>
