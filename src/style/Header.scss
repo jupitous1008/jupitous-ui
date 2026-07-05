@@ -73,10 +73,15 @@
 //   font-weight: bold;
 // }
 
+.mail-icon {
+  color: #0A66C2;
+}
+
 .mail-text {
   position: relative;
-font-size: 14px;
-  padding-left: 5px;
+  display: inline-block;
+  font-size: 14px;
+  margin-left: 8px;
   font-weight: bold;
   color: #0A66C2;
   text-decoration: none;

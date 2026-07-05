@@ -36,10 +36,37 @@
     position: absolute;
     top: 20px;
     right: 20px;
-    background: transparent;
-    border: none;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    background: #ffffff;
+    border: 2px solid #0c2c70;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     color: #0c2c70;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.2s ease;
+
+    svg {
+        width: 22px;
+        height: 22px;
+        color: #0c2c70;
+        stroke: #0c2c70;
+    }
+}
+
+.close-btn:hover {
+    background: #0c2c70;
+    color: #ffffff;
+
+    svg {
+        color: #ffffff;
+        stroke: #ffffff;
+    }
 }
 
 .hero h1 {

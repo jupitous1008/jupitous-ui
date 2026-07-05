@@ -55,6 +55,8 @@ function Header() {
           <a
             href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@jupitous.com"
             className="mail-text"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             contact@jupitous.com
           </a>
@@ -76,7 +78,7 @@ function Header() {
           <FaFacebookF size={18} className="facebook-icon" />
 
           <a
-            href="https://www.linkedin.com/in/jupitous-powertech-b92a4541b/"
+            href="https://www.linkedin.com/company/jupitous/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
