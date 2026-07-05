@@ -307,15 +307,21 @@ export default function ContactPage() {
               <div className="social-links">
 
                 <a
-                  href="#"
                   className="social-icon"
+                  href="https://www.linkedin.com/company/jupitous/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
                 >
                   <FaLinkedinIn />
                 </a>
 
                 <a
-                  href="#"
                   className="social-icon"
+                  href="https://www.instagram.com/life.with.jupitous/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
                 >
                   <FaInstagram />
                 </a>
@@ -328,8 +334,11 @@ export default function ContactPage() {
                 </a>
 
                 <a
-                  href="#"
                   className="social-icon"
+                  href="https://www.youtube.com/@life.with.jupitous"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
                 >
                   <FaYoutube />
                 </a>

@@ -13,7 +13,7 @@ import {
 import indiaMap from "../assets/india.png";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
-import logo from "../assets/jupitous_logo_white.png";
+import logo from "../assets/jupitous_logo_white_bg.png";
 import "../style/Footer.scss";
 
 const Footer = () => {
