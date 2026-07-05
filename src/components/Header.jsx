@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "../style/Header.scss";
-import logo from "../assets/jupitous_logo_white.png";
+import logo from "../assets/jupitous_logo_white_bg.png";
 import { Mail, Phone, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 
