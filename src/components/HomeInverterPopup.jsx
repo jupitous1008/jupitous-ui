@@ -33,8 +33,8 @@ const HomeInverterPopup = ({ onClose }) => {
     return (
         <div className="battery-overlay">
             <div className="battery-container">
-                <button className="close-btn" onClick={onClose}>
-                    <X size={28} />
+                <button className="close-btn" onClick={onClose} aria-label="Close popup">
+                    <X size={24} />
                 </button>
 
                 {/* Hero */}

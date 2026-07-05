@@ -182,7 +182,7 @@ const Footer = () => {
 
 
           <a
-            href="https://www.linkedin.com/in/jupitous-powertech-b92a4541b/"
+            href="https://www.linkedin.com/company/jupitous/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"

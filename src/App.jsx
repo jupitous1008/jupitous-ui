@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Outlet } from "react-router-dom";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -13,62 +13,71 @@ import InverterProducts from "./components/InverterProducts";
 import SolarPanelProducts from "./components/SolarPanelProducts";
 import AboutUs from "./components/AboutUs";
 import ScrollToTop from "./components/ScrollToTop";
+import NotFound from "./components/NotFound";
+
+const AppLayout = () => (
+  <>
+    <Header />
+    <ScrollToTop />
+    <Outlet />
+    <Footer />
+  </>
+);
 
 function App() {
 
   return (
     <>
-      <Header />
-      <ScrollToTop />
-
       <Routes>
+        <Route element={<AppLayout />}>
+          {/* HOME */}
+          <Route
+            path="/"
+            element={<Home />}
+          />
 
-        {/* HOME */}
-        <Route
-          path="/"
-          element={<Home />}
-        />
+          {/* PRODUCTS */}
+          <Route
+            path="/products"
+            element={<Products />}
+          />
 
-        {/* PRODUCTS */}
-        <Route
-          path="/products"
-          element={<Products />}
-        />
+          {/* DISTRIBUTOR */}
+          <Route
+            path="/distributors"
+            element={<Distributors />}
+          />
 
-        {/* DISTRIBUTOR */}
-        <Route
-          path="/distributors"
-          element={<Distributors />}
-        />
+          {/* CONTACT */}
+          <Route
+            path="/contact"
+            element={<ContactPage />}
+          />
 
-        {/* CONTACT */}
-        <Route
-          path="/contact"
-          element={<ContactPage />}
-        />
+          {/* AboutUs */}
+          <Route
+            path="/about-us"
+            element={<AboutUs />}
+          />
 
-        {/* AboutUs */}
-        <Route
-          path="/about-us"
-          element={<AboutUs />}
-        />
+          <Route
+            path="/batteries"
+            element={<BatteryProducts />}
+          />
+          <Route
+            path="/inverters"
+            element={<InverterProducts />}
+          />
 
-        <Route
-          path="/batteries"
-          element={<BatteryProducts />}
-        />
-        <Route
-          path="/inverters"
-          element={<InverterProducts />}
-        />
+          <Route
+            path="/solars"
+            element={<SolarPanelProducts />}
+          />
+        </Route>
 
-        <Route
-          path="/solars"
-          element={<SolarPanelProducts />}
-        />
+        <Route path="*" element={<NotFound />} />
 
       </Routes>
-      <Footer />
     </>
   );
 }
