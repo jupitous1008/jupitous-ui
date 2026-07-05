@@ -1,0 +1,850 @@
+/* Products.scss */
+
+.products-section {
+
+  position: relative;
+
+  width: 100%;
+
+  padding: 50px 20px;
+
+  background: #f5f7fb;
+
+  overflow: hidden;
+}
+
+.swiper{
+  padding: 20px !important;
+}
+
+
+/* ===================================
+   BACKGROUND
+=================================== */
+
+.bg-circle {
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  background: rgba(24, 42, 91, 0.05);
+
+  z-index: 0;
+}
+
+.bg-circle-1 {
+
+  width: 400px;
+  height: 400px;
+
+  top: -100px;
+  left: -100px;
+}
+
+.bg-circle-2 {
+
+  width: 350px;
+  height: 350px;
+
+  bottom: -100px;
+  right: -100px;
+}
+
+
+/* ===================================
+   HEADING
+=================================== */
+
+.products-heading {
+
+  position: relative;
+
+  z-index: 2;
+
+  text-align: center;
+
+  margin-bottom: 70px;
+}
+
+.products-heading .products-tag {
+  color: #2d9934;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.products-heading h1 {
+
+  font-size: 58px;
+
+  color: #182a5b;
+
+  margin: 25px 0;
+}
+
+.products-heading p {
+
+  max-width: 760px;
+
+  margin: auto;
+
+  color: #666;
+
+  font-size: 18px;
+
+  line-height: 1.8;
+}
+
+
+/* ===================================
+   SLIDER
+=================================== */
+
+.products-slider-wrapper {
+
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  padding: 0 25px;
+
+  z-index: 2;
+}
+
+
+/* IMPORTANT */
+
+// .slick-slider {
+
+//   width: 100%;
+// }
+
+// .slick-list {
+
+//   overflow: hidden !important;
+// }
+
+// .slick-track {
+
+//   display: flex !important;
+// }
+
+// .slick-slide {
+
+//   height: inherit !important;
+
+//   display: flex !important;
+
+//   float: none !important;
+// }
+
+// .slick-slide > div {
+
+//   width: 100%;
+
+//   padding: 15px;
+
+//   box-sizing: border-box;
+// }
+
+/* ===================================
+   SLIDER
+=================================== */
+
+.products-slider-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 10px;
+  z-index: 2;
+}
+
+.slick-slider {
+  width: 100%;
+}
+
+.slick-list {
+  overflow: hidden !important;
+}
+
+.slick-track {
+  display: flex !important;
+}
+
+.slick-slide {
+  float: none !important;
+  height: auto !important;
+}
+
+.slick-slide > div {
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+
+/* ===================================
+   CARD
+=================================== */
+
+.product-card {
+
+  position: relative;
+
+  width: 100%;
+
+  min-height: 560px;
+
+  padding: 40px;
+
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  transition: 0.4s ease;
+
+  box-shadow: 0 10px 10px rgba(0,0,0,0.08);
+}
+
+.product-card:hover {
+
+  transform: translateY(-10px);
+}
+
+
+/* ===================================
+   BATTERY CARD
+=================================== */
+
+.battery-card, .inverter-card, .solar-card {
+
+  background-size: 100% 100%;
+  position: relative;
+
+  background-position: center;
+  height: 500px;
+
+  background-repeat: no-repeat;
+
+  color: white;
+
+}
+
+
+
+/* ===================================
+   OTHER CARDS
+=================================== */
+
+/* INVERTER SHOWCASE */
+.inverter-item {
+ position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 60px; /* space above VIEW MORE */
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  width: 100%;
+}
+
+/* IMAGE */
+.inverter-img {
+ width: 85%;
+  max-height: 340px;
+  object-fit: contain;
+
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.15));
+}
+
+/* SOLAR IMAGE CONTAINER */
+.solar-item {
+  width: 100%;
+  height: 320px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+/* IMAGE */
+.solar-img {
+  max-width: 100%;
+  max-height: 100%;
+   background: white;
+
+  color: #182a5b;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+
+
+/* ===================================
+   TOP
+=================================== */
+
+.product-top {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 40px;
+}
+
+.product-top h2 {
+
+  font-size: 32px;
+
+  font-weight: 700;
+}
+
+.inverter-heading, .solar-heading {
+  color: #182a5b;
+  font-weight: bold;
+}
+
+.icon-circle {
+
+  width: 75px;
+  height: 75px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  color: #182a5b;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.title-line {
+
+  width: 55px;
+  height: 3px;
+
+  background: #f4a000;
+
+  margin-top: 12px;
+
+  border-radius: 10px;
+}
+
+
+/* ===================================
+   LIST
+=================================== */
+
+.product-card ul {
+
+  list-style: none;
+
+  padding: 0;
+
+  margin: 0;
+}
+
+.product-card ul li {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 18px;
+
+  font-size: 18px;
+
+  font-weight: bold;
+}
+
+.inverter, .solar {
+  color: #182a5b;
+  font-weight: bold;
+}
+
+
+/* ===================================
+   BUTTON
+=================================== */
+
+.view-btn {
+  position: absolute;
+
+  left: 40px;
+  bottom: 30px;
+
+  z-index: 50;
+
+  border: none;
+  background: transparent;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+/* ===================================
+   BATTERY SHOWCASE
+=================================== */
+
+.battery-showcase {
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: flex-end;
+
+  flex-wrap: nowrap;
+
+   position: relative;
+
+  bottom: 30px;
+  }
+
+/* EACH BATTERY */
+.battery-item {
+  display: flex;
+  justify-content: center;
+}
+
+/* IMAGE SIZE */
+.battery-img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* INDIVIDUAL SIZES */
+.left_battery {
+  margin-left: 120px;
+  width: 280px;
+  height: 130px;
+}
+
+.center-battery {
+  width: 480px;
+  height: 150px;
+}
+
+.right-battery {
+  margin-top: 35px;
+  width: 280px;
+  height: 130px;
+  margin-right: 120px;
+}
+
+
+/* ===================================
+   IMAGE CARD
+=================================== */
+
+.battery-image-card {
+
+  width: 170px;
+
+  background: rgba(255,255,255,0.12);
+
+  backdrop-filter: blur(12px);
+
+  border-radius: 24px;
+
+  padding: 18px;
+
+  text-align: center;
+
+  transition: all 0.4s ease;
+
+  cursor: pointer;
+
+  border: 1px solid rgba(255,255,255,0.15);
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.25);
+}
+
+
+/* CENTER CARD */
+
+.center-card {
+
+  transform: scale(1.08);
+}
+
+
+/* ===================================
+   IMAGE
+=================================== */
+
+.battery-image-card img {
+
+  width: 100%;
+
+  height: 140px;
+
+  object-fit: contain;
+
+  transition: transform 0.4s ease;
+}
+
+
+/* ===================================
+   TEXT
+=================================== */
+
+.battery-info {
+
+  margin-top: 14px;
+}
+
+.battery-info h3 {
+
+  color: #fff;
+
+  font-size: 18px;
+
+  font-weight: 700;
+}
+
+.battery-info p {
+
+  color: rgba(255,255,255,0.75);
+
+  font-size: 14px;
+
+  margin-top: 6px;
+}
+
+
+/* ===================================
+   HOVER EFFECT
+=================================== */
+
+.battery-image-card:hover {
+
+  transform: translateY(-12px);
+}
+
+.battery-image-card:hover img {
+
+  transform: scale(1.08);
+}
+
+
+
+/* ===================================
+   ARROWS
+=================================== */
+
+.custom-arrow {
+
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 55px;
+  height: 55px;
+
+  border-radius: 50%;
+
+  background: #182a5b;
+
+  display: flex !important;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+  z-index: 20;
+}
+
+.prev-arrow {
+
+  left: 3px;
+}
+
+.next-arrow {
+
+  right: 3px;
+}
+
+.custom-arrow::before {
+
+  display: none;
+}
+
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media (max-width: 992px) {
+
+  .products-heading h1 {
+
+    font-size: 42px;
+  }
+
+  .product-card {
+
+    min-height: 860px;
+  }
+}
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media (max-width: 768px) {
+
+  .products-section {
+    padding: 60px 15px;
+  }
+
+  .swiper {
+    padding: 15px !important;
+    height: auto !important;
+    max-height: 620px;
+  }
+
+  .products-slider-wrapper {
+    padding: 0;
+    max-height: 640px;
+  }
+
+  .products-heading {
+    margin-bottom: 40px;
+  }
+
+  .products-heading h1 {
+    font-size: 1.50rem;
+    line-height: 1.25;
+  }
+
+  .products-heading p {
+    font-size: 15px;
+    padding: 0 15px;
+    line-height: 1.6;
+  }
+
+  /* ---------- SLIDER ---------- */
+
+  // .products-slider-wrapper {
+  //   padding: 0;
+  //   overflow: hidden;
+  // }
+
+  // .slick-slider {
+  //   width: 100%;
+  // }
+
+  .products-slider-wrapper {
+  padding: 0;
+}
+
+.products-heading .products-tag {
+    color: #2d9934;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    display: inline-block;
+    text-transform: uppercase;
+  }
+
+.slick-slide {
+  width: 100% !important;
+}
+
+.product-card {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+  .slick-list {
+    overflow: hidden !important;
+  }
+
+  .slick-track {
+    display: flex !important;
+  }
+
+  .slick-slide {
+    float: none !important;
+    display: flex !important;
+    height: auto !important;
+  }
+
+  .slick-slide > div {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  /* ---------- CARD ---------- */
+
+  // .product-card {
+  //   width: 100%;
+  //   min-height: 520px;
+  //   padding: 25px;
+  //   border-radius: 18px;
+  // }
+
+  .battery-card,
+  .inverter-card,
+  .solar-card {
+    min-height: 420px;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* ---------- TOP ---------- */
+
+  .product-top {
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+
+  .product-top h2 {
+    font-size: 1.50rem;
+  }
+
+  .icon-circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* ---------- LIST ---------- */
+
+  .product-card ul li {
+    font-size: 16px;
+    margin-bottom: 14px;
+    gap: 10px;
+  }
+
+  /* ---------- BATTERY ---------- */
+
+  .battery-showcase {
+    margin-top: 3px;
+    bottom: 12px;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .left_battery {
+    width: 115px;
+    height: auto;
+    margin-left: 0;
+  }
+
+  .center-battery {
+    width: 100px;
+    height: auto;
+  }
+
+  .right-battery {
+    width: 115px;
+    height: auto;
+    margin-right: 0;
+    margin-top: 20px;
+  }
+
+  /* ---------- INVERTER ---------- */
+
+  .inverter-item {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 70px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .inverter-img {
+    width: 85%;
+    max-height: 200px;
+    object-fit: contain;
+    margin: -30px;
+  }
+
+  /* ---------- SOLAR ---------- */
+
+  .solar-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .solar-img {
+    width: 85%;
+    height: auto;
+  }
+
+  /* ---------- BUTTON ---------- */
+
+  .view-btn {
+    left: 25px;
+    bottom: 25px;
+    color: #fff;
+    font-size: 0.90rem;
+    letter-spacing: 1px;
+  }
+
+  /* ---------- ARROWS ---------- */
+
+  .custom-arrow {
+    width: 42px;
+    height: 42px;
+  }
+
+  .prev-arrow {
+    left: 0px;
+  }
+
+  .next-arrow {
+    right: 0px;
+  }
+}

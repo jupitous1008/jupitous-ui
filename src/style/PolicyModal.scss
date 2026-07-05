@@ -1,0 +1,347 @@
+/* ===========================================
+   POLICY MODAL
+=========================================== */
+
+.policy-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 99999;
+
+  padding: 20px;
+
+  animation: fadeIn 0.3s ease;
+}
+
+.policy-modal {
+  width: 100%;
+  max-width: 900px;
+  max-height: 85vh;
+
+  background: #fff;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+
+  animation: popup 0.35s ease;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.policy-header {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 22px 30px;
+
+  background: #082f78;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 10;
+}
+
+.policy-header h2 {
+
+  margin: 0;
+
+  color: white;
+
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.close-btn {
+
+  width: 42px;
+  height: 42px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,.15);
+
+  color: #fff;
+
+  font-size: 28px;
+
+  cursor: pointer;
+
+  transition: .3s;
+}
+
+.close-btn:hover {
+
+  background: #2d9934;
+
+  transform: rotate(90deg);
+}
+
+/* ==========================
+   BODY
+========================== */
+
+.policy-body {
+
+  padding: 35px;
+
+  overflow-y: auto;
+
+  line-height: 1.9;
+}
+
+/* Scrollbar */
+
+.policy-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.policy-body::-webkit-scrollbar-thumb {
+  background: #2d9934;
+  border-radius: 10px;
+}
+
+.policy-body::-webkit-scrollbar-track {
+  background: #ececec;
+}
+
+/* ==========================
+   TYPOGRAPHY
+========================== */
+
+.policy-body h3 {
+
+  color: #082f78;
+
+  margin-top: 28px;
+  margin-bottom: 12px;
+
+  font-size: 22px;
+
+  font-weight: 700;
+}
+
+.policy-body h4 {
+
+  color: #2d9934;
+
+  margin-top: 20px;
+  margin-bottom: 10px;
+
+  font-size: 18px;
+}
+
+.policy-body p {
+
+  color: #555;
+
+  font-size: 16px;
+
+  margin-bottom: 18px;
+
+  font-weight: 400;
+}
+
+.policy-body ul {
+
+  margin: 15px 0;
+
+  padding-left: 22px;
+}
+
+.policy-body li {
+
+  margin-bottom: 10px;
+
+  color: #444;
+
+  font-size: 16px;
+}
+
+.policy-body strong {
+  color: #082f78;
+}
+
+/* ==========================
+   LINKS
+========================== */
+
+.policy-body a {
+
+  color: #2d9934;
+
+  text-decoration: none;
+
+  font-weight: 600;
+}
+
+.policy-body a:hover {
+
+  text-decoration: underline;
+}
+
+/* ==========================
+   ANIMATIONS
+========================== */
+
+@keyframes popup {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(40px) scale(.96);
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeIn {
+
+  from {
+
+    opacity: 0;
+  }
+
+  to {
+
+    opacity: 1;
+  }
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media (max-width:992px) {
+
+  .policy-modal {
+
+    max-width: 95%;
+  }
+
+  .policy-header {
+
+    padding: 20px;
+  }
+
+  .policy-header h2 {
+
+    font-size: 24px;
+  }
+
+  .policy-body {
+
+    padding: 25px;
+  }
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width:768px) {
+
+  .policy-overlay {
+
+    padding: 12px;
+  }
+
+  .policy-modal {
+
+    max-height: 92vh;
+
+    border-radius: 12px;
+  }
+
+  .policy-header {
+
+    padding: 16px 20px;
+  }
+
+  .policy-header h2 {
+
+    font-size: 22px;
+  }
+
+  .close-btn {
+
+    width: 36px;
+    height: 36px;
+
+    font-size: 22px;
+  }
+
+  .policy-body {
+
+    padding: 20px;
+  }
+
+  .policy-body h3 {
+
+    font-size: 20px;
+  }
+
+  .policy-body h4 {
+
+    font-size: 17px;
+  }
+
+  .policy-body p,
+  .policy-body li {
+
+    font-size: 15px;
+
+    line-height: 1.8;
+  }
+}
+
+/* ==========================
+   SMALL MOBILE
+========================== */
+
+@media (max-width:480px) {
+
+  .policy-header h2 {
+
+    font-size: 18px;
+  }
+
+  .policy-body {
+
+    padding: 18px;
+  }
+
+  .policy-body h3 {
+
+    font-size: 18px;
+  }
+
+  .policy-body p,
+  .policy-body li {
+
+    font-size: 14px;
+  }
+}
