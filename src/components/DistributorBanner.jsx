@@ -14,12 +14,12 @@ const DistributorBanner = () => {
      const navigate = useNavigate();
 
     const handleDownload = () => {
-  const link = document.createElement("a");
-  link.href = brochurePdf;
-  link.download = "JUPITOUS-Brochure.pdf";
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  // const link = document.createElement("a");
+  // link.href = brochurePdf;
+  // link.download = "JUPITOUS-Brochure.pdf";
+  // document.body.appendChild(link);
+  // link.click();
+  // document.body.removeChild(link);
 };
     
   return (
