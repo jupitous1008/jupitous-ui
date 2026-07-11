@@ -704,7 +704,8 @@ $white: #ffffff;
 
         .hero-container {
             margin: 0;
-            max-width: 80%;
+            max-width: 100%;
+            width: 100%;
 
             h1 {
                 margin-top: 50px;
@@ -720,6 +721,10 @@ $white: #ffffff;
                 margin-top: 24px;
                 padding: 12px 24px;
                 font-size: 0.85rem;
+                display: inline-flex;
+                width: auto;
+                max-width: fit-content;
+                white-space: nowrap;
             }
         }
     }
@@ -728,7 +733,7 @@ $white: #ffffff;
     .core-pillars {
         max-width: 1200px;
         margin: -40px auto 0 auto;
-        padding: 0 24px;
+        padding: 24px 24px 0 24px;
         position: relative;
         z-index: 20;
 
