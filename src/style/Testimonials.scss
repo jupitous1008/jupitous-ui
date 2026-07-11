@@ -8,6 +8,8 @@
   justify-content: center;
   gap: 20px;
   margin-bottom: 40px;
+  flex-wrap: wrap;
+  text-align: center;
 
   .line {
     width: 50px;
@@ -22,6 +24,7 @@
     color: #142c6e;
     text-transform: uppercase;
     letter-spacing: 1px;
+    width: 100%;
   }
 }
 
@@ -169,7 +172,8 @@ bottom: var(--swiper-pagination-bottom, -5px);
     padding: 35px 12px;
 
     .section-heading {
-      flex-direction: row;
+      flex-direction: column;
+      gap: 12px;
 
       .line {
         width: 25px;
@@ -177,6 +181,7 @@ bottom: var(--swiper-pagination-bottom, -5px);
 
       h2 {
         font-size: 20px;
+        width: 100%;
       }
     }
 
